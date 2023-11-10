@@ -5,8 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 56px;
+  background: radial-gradient( #eedcc5,#fff 60%);
+  background-attachment: fixed;
+/* #f5f0eb */
+  
 }
-
+@media (min-width: 992px) {
+  body {
+    padding-top: 72px; /* Adjust according to your header height for larger screens */
+  }
+} 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
