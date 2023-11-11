@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "100threads",
+  "name": "100threads clothing",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "100-thread-logo-icon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./Welcome",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

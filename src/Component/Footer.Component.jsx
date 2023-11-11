@@ -1,14 +1,14 @@
 // Footer.js
 
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import "./Headerfooter.component.css"
 
 
 const Foot_bar = () => {
+  
   return (
-    <div className="footer">
-      <p>&copy; 2023 Your Company. All rights reserved.</p>
+    <div className="footer pg-4">
+      <p>&copy; 2023 100Threads. All rights reserved.</p>
     </div>
   );
 }

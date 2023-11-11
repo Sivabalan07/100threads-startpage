@@ -6,10 +6,18 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+:root{
+  --font-frnt-size: 100px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media (max-width:425px){
+  :root{
+    --font-frnt-size: 40px;
   }
 }
 
@@ -36,3 +44,40 @@
     transform: rotate(360deg);
   }
 }
+
+.animation-cs{
+  animation-name: tracking-in-expand;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-delay: 0s;
+  font-size: var(--font-frnt-size);
+}
+
+ @-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

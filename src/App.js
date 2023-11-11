@@ -3,23 +3,23 @@ import React from 'react';
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import Head_navbar from './Component/Header.Component';
 import Foot_bar from './Component/Footer.Component';
+import logo from './logo.svg'
+
 
 function App() {
-  const [showLoginModal, setShowLoginModal] = React.useState(true);
 
-  const handleOpenLoginModal = () => {
-    setShowLoginModal(!showLoginModal);
 
-  }
+
   return (
       <div>
       <Head_navbar/>
-      <div className="container mt-4">
-        <h1>Your Content Goes Here</h1>
+      <div className="container mt-4 App">
+        <div className='animation-cs' ><p>Coming soon..</p></div>
         {/* Add your page content here */}
-  
+        <img url={logo} alt='100Threads' style={{opacity:0.5,postion:'relative'}}/>
+        <p>The best clothing to buy and have a full comfort of our brand products</p>
       </div>
-      <foot_bar/>
+      <Foot_bar/>
       </div>
 
   );

@@ -1,0 +1,28 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: aliceblue;
+    background-color: #000;
+    /* Adjust the background color */
+    text-align: center;
+    padding: 10px 0;
+}
+
+.radialgradient {
+    background: radial-gradient(#eedcc5, #fff 60%);
+}
+
+.modalst {
+    height: 80vh;
+    max-height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    max-width: 600px;
+    border-radius: 20px;
+    overflow: auto;
+    box-sizing: border-box;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
