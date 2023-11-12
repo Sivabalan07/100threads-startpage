@@ -13,7 +13,7 @@ function App() {
   return (
       <div>
       <Head_navbar/>
-      <div className="container mt-4 App"  >
+      <div className="container mt-5 App"  >
         <div className='animation-cs' ><p>Coming soon..</p></div>
         {/* Add your page content here */}
         <div className='fade-in show'>

@@ -11,7 +11,7 @@ const Head_navbar = () => {
   return (
     <header>
     <nav className="navbar navbar-expand-lg navbar-light fixed-top"style={{background : 'linear-gradient( #f1e7d9,#fff,#fff,#fff,#fff)'}}>
-      <div className="container">
+      <div className="container" style={{height:70}}>
         <a className="navbar-brand" href="#">
           {/* <img url="/brand.png" alt='100Threads' width={20} height={10}/> */}
           {/* <img url={logo} alt='100Threads' width={100} height={"auto"} role='image'/> */}
