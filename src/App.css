@@ -31,7 +31,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.bg-img{
+  background-image: url(./asset/brand-removebg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height:200px;
+  margin: 20px;
+  align-items: center;
+  transition: all 2s;
+}
 .App-link {
   color: #61dafb;
 }

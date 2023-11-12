@@ -8,6 +8,14 @@
     text-align: center;
     padding: 10px 0;
 }
+.logobg-img{
+    background-image: url(../asset/brand-removebg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 180px 95px;
+    min-height: 72px;
+    min-width: 150px;
+  }
 
 .radialgradient {
     background: radial-gradient(#eedcc5, #fff 60%);
