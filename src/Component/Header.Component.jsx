@@ -10,7 +10,7 @@ import logo from "../asset/brand-removebg.png";
 const Head_navbar = () => {
   return (
     <header>
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top"style={{background : 'linear-gradient( #f1e7d9,#fff,#fff,#fff,#fff)'}}>
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top"style={{background : 'rgba(255, 255, 255, 0.1)'}}>
       <div className="container" style={{height:70}}>
         <a className="navbar-brand" href="#">
           {/* <img url="/brand.png" alt='100Threads' width={20} height={10}/> */}

@@ -8,6 +8,7 @@
 }
 :root{
   --font-frnt-size: 100px;
+  --bgimg-front-size: auto;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -18,6 +19,7 @@
 @media (max-width:425px){
   :root{
     --font-frnt-size: 40px;
+    --bgimg-front-size: 340px;
   }
 }
 
@@ -35,7 +37,7 @@
   background-image: url(./asset/brand-removebg.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: calc(var(--font-frnt-size) + 300px);
+  background-size: var(--bgimg-front-size);
   min-height:200px;
   min-width: auto;
   align-items: center;
