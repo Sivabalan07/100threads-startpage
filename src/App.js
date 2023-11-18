@@ -13,7 +13,7 @@ function App() {
   return (
       <div>
       <Head_navbar/>
-      <div className="container mt-4 App"  >
+      <div className="container mt-5 App"  >
         <div className='animation-cs' ><p>Coming soon..</p></div>
         {/* Add your page content here */}
         <div className='fade-in show'>
@@ -21,7 +21,7 @@ function App() {
         </div>
         {/* <img url={logo} alt='100Threads' style={{opacity:0.5,postion:'relative'}}/> */}
         
-        <p>The best clothing to buy and have a full comfort of our brand products</p>
+        <p style={{fontFamily : "Snell Roundhand, cursive"}}>The best clothing to buy and have a full comfort of our brand products</p>
       </div>
       <Foot_bar/>
       </div>
