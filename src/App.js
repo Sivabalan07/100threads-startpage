@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import Head_navbar from './Component/Header.Component';
 import Foot_bar from './Component/Footer.Component';
@@ -13,6 +14,12 @@ function App() {
   return (
       <div>
       <Head_navbar/>
+      <BrowserRouter>
+        <Routes>
+        {/* <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} /> */}
+          <Route path="*" element={
       <div className="container mt-5 App"  >
         <div className='animation-cs' ><p>Coming soon..</p></div>
         {/* Add your page content here */}
@@ -22,7 +29,9 @@ function App() {
         {/* <img url={logo} alt='100Threads' style={{opacity:0.5,postion:'relative'}}/> */}
         
         <p style={{fontFamily : "Snell Roundhand, cursive"}}>The best clothing to buy and have a full comfort of our brand products</p>
-      </div>
+      </div>} />
+      </Routes>
+      </BrowserRouter>
       <Foot_bar/>
       </div>
 
