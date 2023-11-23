@@ -16,8 +16,8 @@ function App() {
       <Head_navbar/>
       <BrowserRouter>
         <Routes>
-        {/* <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
+         <Route path='error' element={<div><p>hi</p></div>} />
+          {/*<Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} /> */}
           <Route path="*" element={
       <div className="container mt-5 App"  >
