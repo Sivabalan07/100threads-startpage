@@ -1,0 +1,26 @@
+.aboutstyle {
+    text-align: "Left";
+    padding: 100px;
+    padding-top:25px;
+    overflow: "auto";
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;
+
+}
+
+.curser-pointer {
+    text-decoration: "none";
+    color: "black"
+}
+
+.heading{
+    font-size: 40px;
+    display: flex;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;
+    padding: 50px;
+    justify-Content:Center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}

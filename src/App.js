@@ -1,15 +1,18 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import 'bootstrap/dist/css/bootstrap.min.css'
-import Head_navbar from "./Component/Header.Component";
 import Foot_bar from "./Component/Footer.Component";
 import logo from "./logo.svg";
+import Product from "./Component/Product/product.component";
+import Contact from "./Component/Contact/contact.component";
+import About from "./Component/About/about.component";
+import HeadNavbar from "./Component/Header.Component";
+import Home from "./Component/Home/home.component"
 
 function App() {
   return (
     <div>
-      <Head_navbar />
+      
       <BrowserRouter>
         <Routes>
           <Route
@@ -20,11 +23,16 @@ function App() {
               </div>
             }
           />
-          <Route path="privacy-ploicy" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="privacy-ploicy" element={<Product />} />
+          <Route path="contact" element={<Contact/>} />
+          <Route path="product" element={<Contact/>} />
+          <Route path="About" element={<About/>} />
+          <Route index path="Home" element={<Home/>}/>
           <Route
             path="*"
             element={
+              <>
+              <HeadNavbar />
               <div className="container mt-5 App">
                 <div className="animation-cs">
                   <p>Coming soon..</p>
@@ -45,6 +53,7 @@ function App() {
                   products
                 </p>
               </div>
+              </>
             }
           />
         </Routes>
