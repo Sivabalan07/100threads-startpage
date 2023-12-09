@@ -26,7 +26,7 @@ const HeadNavbar = () => {
                   <a className="nav-itstyle" href="./">Home</a>
                 </li>
                 <li>
-                  <a className="nav-itstyle" href="./">Products</a>
+                  <a className="nav-itstyle" href="./Products">Products</a>
                 </li>
                 <li >
                 <a className="nav-itstyle" href="./about" style={{ cursor: "pointer" }}>About</a>

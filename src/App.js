@@ -7,7 +7,11 @@ import Product from "./Component/Product/product.component";
 import Contact from "./Component/Contact/contact.component";
 import About from "./Component/About/about.component";
 import HeadNavbar from "./Component/Header.Component";
-import Home from "./Component/Home/home.component"
+import Home from "./Component/Home/home.component";
+import ProductId from "./Component/Product/productId.component";
+import Privacy from "./Component/Policy/privacy.component";
+import Terms from "./Component/Policy/terms.component";
+import Order from "./Component/Order/order.component";
 
 function App() {
   return (
@@ -23,10 +27,12 @@ function App() {
               </div>
             }
           />
-          <Route path="privacy-ploicy" element={<Product />} />
+          <Route path="privacy-policy" element={<Privacy />} />
+          <Route path="terms-and-condition" element={<Terms />} />
           <Route path="contact" element={<Contact/>} />
-          <Route path="product" element={<Contact/>} />
+          <Route path="products" element={<Product/>} />
           <Route path="About" element={<About/>} />
+          <Route path="Order/:id" element={<Order/>} />
           <Route index path="Home" element={<Home/>}/>
           <Route
             path="*"
@@ -56,6 +62,7 @@ function App() {
               </>
             }
           />
+          <Route path="product/:id" element={<ProductId/>} />
         </Routes>
       </BrowserRouter>
       <Foot_bar />

@@ -1,7 +1,7 @@
 import React from 'react';
 import HeadNavbar from "../Header.Component";
 
-const Privacy =() =>{
+const Terms =() =>{
     return (<HeadNavbar />);
 }
-export default Privacy;
+export default Terms;
