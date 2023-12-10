@@ -5,7 +5,7 @@ const Contact = () => {
 
     return (
         <>
-        <HeadNavbar />
+        <HeadNavbar Setactbar='3'/>
         <div style={{ textAlign: "Left", padding: 40, fontFamily: "source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace", justifyContent:'center'}}>
             <p>
                 Trade name: 100 Threads Apparel

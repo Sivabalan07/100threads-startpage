@@ -20,7 +20,7 @@
     background-image: url(../asset/brand-removebg.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 180px 95px;
+    background-size: 600px 300px;
     min-height: 70px;
     min-width: 150px;
 }
@@ -68,4 +68,21 @@
     background: 0 0;
     border: 0;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav-itstyle:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: rgb(24, 24, 34);
+    transition: width 0.7s;
+}
+
+.active:after{
+    width:100%
+}
+
+.nav-itstyle:hover:after{
+    width: 100%
 }

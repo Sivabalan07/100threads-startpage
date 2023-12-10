@@ -3,12 +3,12 @@ import React from 'react';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "./Headerfooter.component.css";
 
-const HeadNavbar = () => {
+const HeadNavbar = ({Setactbar}) => {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-        <div className="container" style={{ height: 70, fontFamily: "Snell Roundhand, cursive" ,backgroundColor: 'white'}}>
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{backgroundColor: 'white', padding:0}}>
+        <div className="container" style={{ padding:0, width:'max',fontFamily: "Snell Roundhand, cursive" }}>
           <a className="navbar-brand" href="#">
             <div className='logobg-img'></div>
           </a>
@@ -21,18 +21,18 @@ const HeadNavbar = () => {
               <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style={{ alignItems: "end" }}></button>
             </div>
             <div className="offcanvas-body" style={{ maxWidth: 240 }}>
-              <ul className="navbar-nav ml-auto">
+              <ul className="navbar-nav ml-auto" style={{paddingLeft:'25%'}}>
                 <li>
-                  <a className="nav-itstyle" href="./">Home</a>
+                  <a className={`nav-itstyle ${(Setactbar==='0')?'active':''}`} href="./">Home</a>
                 </li>
                 <li>
-                  <a className="nav-itstyle" href="./Products">Products</a>
+                  <a className={`nav-itstyle ${(Setactbar==='1')?'active':''}`} href="./Products">Products</a>
                 </li>
                 <li >
-                <a className="nav-itstyle" href="./about" style={{ cursor: "pointer" }}>About</a>
+                <a className={`nav-itstyle ${(Setactbar==='2')?'active':''}`} href="./about">About</a>
                 </li>
                 <li >
-                  <a className='nav-itstyle' href="./contact">Contact</a>
+                  <a className={`nav-itstyle ${(Setactbar==='3')?'active':''}`} href="./contact">Contact</a>
                 </li>
               </ul>
             </div>

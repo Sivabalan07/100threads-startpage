@@ -38,7 +38,7 @@ function App() {
             path="*"
             element={
               <>
-              <HeadNavbar />
+              <HeadNavbar Setactbar='0' />
               <div className="container mt-5 App">
                 <div className="animation-cs">
                   <p>Coming soon..</p>

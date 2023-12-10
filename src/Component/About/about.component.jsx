@@ -8,7 +8,7 @@ import "./about.component.css";
 const About = () => {
     return (
         <>
-        <HeadNavbar/>
+        <HeadNavbar Setactbar='2'/>
         <div className='heading'> About us</div>
         <div className="aboutstyle">
             <p>Welcome to 100Threads, where style meets comfort, and every thread tells a story! We are more than just a T-shirt brand; we're a canvas for self-expression, a celebration of individuality, and a testament to the power of comfortable fashion.
