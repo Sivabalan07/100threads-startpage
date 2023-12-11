@@ -10,7 +10,7 @@ const Product = () => {
 
   return (
     <>
-    <HeadNavbar/>
+    <HeadNavbar Setactbar='1'/>
     <div className={`my-component ${isActive ? 'active' : ''}`}>
       <p>This is my component.</p>
       <button onClick={toggleClass}>Toggle Class</button>
