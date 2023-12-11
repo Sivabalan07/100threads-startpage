@@ -2,7 +2,6 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Foot_bar from "./Component/Footer.Component";
-import logo from "./logo.svg";
 import Product from "./Component/Product/product.component";
 import Contact from "./Component/Contact/contact.component";
 import About from "./Component/About/about.component";
@@ -41,23 +40,19 @@ function App() {
               <HeadNavbar Setactbar='0' />
               <div className="container mt-5 App">
                 <div className="animation-cs">
-                  <p>Coming soon..</p>
+                  <p>Your are looking page is not found <br></br> Please visit our home and enjoy shopping..</p>
                 </div>
                 {/* Add your page content here */}
+                <a href="./">
                 <div className="fade-in show">
                   <div className="bg-img" role="banner"></div>
                 </div>
-                <img
-                  url={logo}
-                  alt="100Threads"
-                  className="img-rounded"
-                  style={{ opacity: 0.5, postion: "relative" }}
-                />
 
                 <p style={{ fontFamily: "Snell Roundhand, cursive" }}>
                   The best clothing to buy and have a full comfort of our brand
                   products
                 </p>
+                </a>
               </div>
               </>
             }

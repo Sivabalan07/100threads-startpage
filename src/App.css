@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 :root{
-  --font-frnt-size: 100px;
+  --font-frnt-size: 50px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -17,7 +17,7 @@
 
 @media (max-width:425px){
   :root{
-    --font-frnt-size: 40px;
+    --font-frnt-size: 30px;
   }
 }
 
@@ -35,7 +35,7 @@
   background-image: url(./asset/brand-removebg.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: calc(var(--font-frnt-size) + 300px);
+  background-size: calc(var(--font-frnt-size) + 1500px);
   min-height:200px;
   min-width: auto;
   align-items: center;
@@ -91,3 +91,7 @@
   }
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
