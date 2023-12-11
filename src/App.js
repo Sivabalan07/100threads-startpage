@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Foot_bar from "./Component/Footer.Component";
+import FootBar from "./Component/Footer.Component";
 import Product from "./Component/Product/product.component";
 import Contact from "./Component/Contact/contact.component";
 import About from "./Component/About/about.component";
@@ -30,9 +30,9 @@ function App() {
           <Route path="terms-and-condition" element={<Terms />} />
           <Route path="contact" element={<Contact/>} />
           <Route path="products" element={<Product/>} />
+          <Route index element={<Home/>} />
           <Route path="About" element={<About/>} />
           <Route path="Order/:id" element={<Order/>} />
-          <Route index path="Home" element={<Home/>}/>
           <Route
             path="*"
             element={
@@ -42,7 +42,6 @@ function App() {
                 <div className="animation-cs">
                   <p>Your are looking page is not found <br></br> Please visit our home and enjoy shopping..</p>
                 </div>
-                {/* Add your page content here */}
                 <a href="./">
                 <div className="fade-in show">
                   <div className="bg-img" role="banner"></div>
@@ -60,7 +59,7 @@ function App() {
           <Route path="product/:id" element={<ProductId/>} />
         </Routes>
       </BrowserRouter>
-      <Foot_bar />
+      <FootBar />
     </div>
   );
 }
