@@ -21,7 +21,7 @@ const HeadNavbar = ({Setactbar}) => {
               <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style={{ alignItems: "end" }}></button>
             </div>
             <div className="offcanvas-body" style={{ maxWidth: 240 }}>
-              <ul className="navbar-nav ml-auto" style={{paddingLeft:'25%'}}>
+              <ul className="navbar-nav ml-auto">
                 <li>
                   <a className={`nav-itstyle ${(Setactbar==='0')?'active':''}`} href="./">Home</a>
                 </li>

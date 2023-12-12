@@ -5,7 +5,8 @@
     background-color: #000;
     /* Adjust the background color */
     text-align: center;
-    padding: 10px 0;
+    margin-top: 386px;
+    padding-bottom: 10px;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
@@ -85,4 +86,10 @@
 
 .nav-itstyle:hover:after{
     width: 100%
+}
+
+@media (max-width:990px) {
+    .navbar-nav{
+        padding-left: 25%;
+    }
 }
