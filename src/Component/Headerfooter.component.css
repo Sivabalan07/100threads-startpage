@@ -3,10 +3,8 @@
     width: 100%;
     color: aliceblue;
     background-color: #000;
-    /* Adjust the background color */
     text-align: center;
-    margin-top: 386px;
-    padding-bottom: 10px;
+    position: fixed;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
@@ -14,6 +12,7 @@
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
     outline: none;
+    cursor: pointer;
     box-shadow: none;
 }
 
@@ -21,7 +20,7 @@
     background-image: url(../asset/brand-removebg.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 600px 300px;
+    background-size: 560px 280px;
     min-height: 70px;
     min-width: 150px;
 }
@@ -60,18 +59,17 @@
 } */
 
 .nav-itstyle {
-    cursor: "pointer";
+    cursor: pointer;
     text-decoration: none;
-    color:#000000A6;
-    padding:8px;
-    display: block;
-    text-decoration: none;
-    background: 0 0;
-    border: 0;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    color: #000000A6;
+    /* margin: 1rem; */
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    font-weight: 500;
 }
 
-.nav-itstyle:after{
+.nav-itstyle:after {
     content: "";
     display: block;
     width: 0;
@@ -80,16 +78,16 @@
     transition: width 0.7s;
 }
 
-.active:after{
-    width:100%
+.active:after {
+    width: 100%
 }
 
-.nav-itstyle:hover:after{
+.nav-itstyle:hover:after {
     width: 100%
 }
 
 @media (max-width:990px) {
-    .navbar-nav{
+    .navbar-nav {
         padding-left: 25%;
     }
 }

@@ -1,9 +1,8 @@
 .aboutstyle {
-    text-align: "Left";
+    text-align: left;
     padding: 5%;
-    padding-top:25px;
-    overflow: "auto";
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;
+    overflow: auto;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 }
 
@@ -12,13 +11,12 @@
     color: "black"
 }
 
-.heading{
-    font-size: 40px;
-    display: flex;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;
-    padding: 50px;
-    justify-Content:Center;
-    align-items: center;
+.heading {
+    font-size: 2rem;
+    text-align: center;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    padding: 1rem;
+
 }
 
 ::-webkit-scrollbar {
