@@ -8,15 +8,15 @@ const Order =() =>{
     const size = "f";
     function submitform(formData){
       'use server';
-        var date = new Date();
+        var date = new Date().toLocaleString("en-GB", {timeZone: 'Asia/Kolkata'});
         const jsonst={
             product_id:id+size,
             customer_name:formData.get("Name"),
             customer_email:formData.get("Email"),
             customer_number:formData.get("PhoneNumber"),
             customer_address:formData.get("Address"),
-            order_date:date.toJSON().slice(0,10),
-            order_time:date.toJSON().slice(11,18),
+            order_date:date.slice(0,10),
+            order_time:date.slice(12,29),
             stkid:"",
             order_quality:formData.get("Quality"),
             referral_code:formData.get("Referral")
@@ -125,6 +125,8 @@ const expenseData = {
   amount: enteredAmount,
   date: new Date(enteredDate),
 }
+var date = new Date().toLocaleString("en-GB", {timeZone: 'Asia/Kolkata'});
+console.log(date.slice(0,10)+"\n"+date.slice(12,29));
 console.log(expenseData);
 // props.onSaveExpenseData(expenseData)
 
