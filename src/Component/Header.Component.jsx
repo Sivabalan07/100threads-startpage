@@ -9,7 +9,7 @@ const HeadNavbar = ({Setactbar}) => {
     <header>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{backgroundColor: 'white', padding:0}}>
         <div className="container" style={{ padding:0, width:'max',fontFamily: "Snell Roundhand, cursive" }}>
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="./">
             <div className='logobg-img'></div>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style={{ border: "none" }}>

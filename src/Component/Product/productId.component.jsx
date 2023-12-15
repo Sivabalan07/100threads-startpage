@@ -7,6 +7,7 @@ const ProductId = () => {
     return (<>
         <HeadNavbar />
         <p>{id}</p>
+        <p></p>
     </>);
 }
 export default ProductId;

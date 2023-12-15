@@ -1,4 +1,4 @@
-.cards {
+/* .cards {
     margin: 1rem;
     width: 18%;
     height: 50vh;
@@ -28,7 +28,72 @@
     .cards {
         width: auto;
     }
-    .details{
+
+    .details {
         width: auto;
     }
 }
+
+.home_image {
+    padding: 100px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: xx-large;
+
+}
+
+.order_now {
+    text-align: center;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+
+}
+
+.image {
+    /* /* width: 10%;  */
+    /* height: auto;  */
+    
+    /* width: 60%; */
+
+    /* display: block; */
+    /* max-height: fit-content; */
+    /* min-width: fit-content;  */
+/* } */ 
+.card mb-4
+{
+    width: 18rem;
+     border: 4px red #000;
+    
+      border-radius:15px
+}
+/* 
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+} */
+
+.card {
+  width: 18rem;
+  margin-bottom: 20px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.card-img-top:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+  }
+  

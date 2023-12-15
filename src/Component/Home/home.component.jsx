@@ -5,7 +5,9 @@ const Home =() =>{
     return (
         <>
     <HeadNavbar Setactbar='0'/>
-    <p>hello<br/>hello</p>
+    <hr></hr>
+
+   <marquee> <img class name="home_image" src="brand.png" alt="no preview available"></img></marquee>
     </>
     );
 }
