@@ -23,16 +23,16 @@ const HeadNavbar = ({Setactbar}) => {
             <div className="offcanvas-body" style={{ maxWidth: 240 }}>
               <ul className="navbar-nav ml-auto">
                 <li>
-                  <a className={`nav-itstyle ${(Setactbar==='0')?'active':''}`} href="./">Home</a>
+                  <a className={`nav-itstyle ${(Setactbar==='0')?'active':''}`} href="/">Home</a>
                 </li>
                 <li>
-                  <a className={`nav-itstyle ${(Setactbar==='1')?'active':''}`} href="./Products">Products</a>
+                  <a className={`nav-itstyle ${(Setactbar==='1')?'active':''}`} href="/Products">Products</a>
                 </li>
                 <li >
-                <a className={`nav-itstyle ${(Setactbar==='2')?'active':''}`} href="./about">About</a>
+                <a className={`nav-itstyle ${(Setactbar==='2')?'active':''}`} href="/about">About</a>
                 </li>
                 <li >
-                  <a className={`nav-itstyle ${(Setactbar==='3')?'active':''}`} href="./contact">Contact</a>
+                  <a className={`nav-itstyle ${(Setactbar==='3')?'active':''}`} href="/contact">Contact</a>
                 </li>
               </ul>
             </div>
