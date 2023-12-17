@@ -77,7 +77,7 @@ const Order = () => {
 
   const FormRender = () => {
     return (
-      <div className='container col-lg-2  ' style={{paddingLeft:50,paddingTop:50}}>
+      <div className='container-xl d-flex justify-content-center  ' style={{paddingLeft:50,paddingTop:50}}>
         <form onSubmit={submitform}>
           <div className="form-row" >
             <div className="form-group col-md-6" style={{minWidth:'max-content'}}>
@@ -89,7 +89,7 @@ const Order = () => {
               <input type="text" className="form-control" id="inputname" placeholder="Name" name="customer_name" onChange={jsonchange} />
             </div>
           </div>
-          <div className="form-group col-md-7 " style={{minWidth:'max-content'}}>
+          <div className="form-group col-md-6 " style={{minWidth:'max-content'}}>
             <label htmlFor="inputAddress">Address</label>
             <input type="text" className="form-control"  placeholder="your full address" name="customer_address" onChange={jsonchange} />
           </div>

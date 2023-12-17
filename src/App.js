@@ -18,14 +18,6 @@ function App() {
       
       <BrowserRouter>
         <Routes>
-          <Route
-            path="error"
-            element={
-              <div>
-                <p>hi</p>
-              </div>
-            }
-          />
           <Route path="privacy-policy" element={<Privacy />} />
           <Route path="terms-and-condition" element={<Terms />} />
           <Route path="contact" element={<Contact/>} />

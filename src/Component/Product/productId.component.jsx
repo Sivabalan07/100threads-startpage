@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import HeadNavbar from '../Header.Component';
 import './products.component.css'; // Include your custom CSS file for additional styling
@@ -7,6 +7,7 @@ import minus from "../../asset/minus.svg";
 
 const ProductId = () => {
   const imagearray = ["https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYTUP2YmHYzll02_40lU1WPRsvxJC7h1eC2ftKi2heNmloKcLtGanzRNrQ7dHM6_Je7RmqUYEF8WyDRrpBnUmmlkq9VX=w1366-h633", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYTu_NYwzAeAZqSDAEBvnWcC3NFdNhwb1rKoWBsHrj-xMqvSkwgciI65ZPfd9rIwny4FW5-MIPMUUx-K1U1N0fv8eMr3=w2048-h1456", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYT_GCbj-IkswnYXLsN8gHTGSjzkqcY_Q32qWBetKRvVBldXrTSrCAgqW5bpQ8ui9iHhhaoO6cWyTTeTF3ALhTaG_1Aspw=w2048-h1456", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYQE3Scf6XIMGhZ5d362O7ntcs96SI_j9wPtlZo5_RuBdk0X_S_vsKvTWBVvsPyxj02jrk781NyViuiCNUpVsSCpuAPG=w2048-h1456", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYST1w955IGZkexvLqa9WO0CkKEmjLYSw8CVsgHrEM1UBFeV4gTSYkzVgneBAy4R9r_Z9kjWHk8WwucaAsiMSidxGd2Pfw=w2048-h1456"]
+
 
   const { id } = useParams();
   const [Size, SetSize] = useState("XS");
@@ -26,10 +27,13 @@ const ProductId = () => {
   const sharelink=()=>{
     navigator.share( {url: window.location.href});
   }
+  useEffect(()=>{
+    if(id!=="100T0001")
+    window.location.href="/products"
+  },[])
   return (
     <>
       <HeadNavbar />
-
 
       <div id="main">
         <div className="img">

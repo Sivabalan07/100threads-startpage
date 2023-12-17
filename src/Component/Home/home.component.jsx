@@ -1,5 +1,6 @@
 import React from 'react';
 import HeadNavbar from "../Header.Component";
+import './home.component.css';
 
 const Serviceshort = () => {
     return (
@@ -52,14 +53,13 @@ const Centerpot = () => {
         <>
             <div className="container">
                 <div className='row'>
-                    <div className="col-lg-6 col-md-6 col-sm-6">
-                        <div className='card' style={{ backgroundColor: 'transparent', border: 0 }}><img src="https://lh3.googleusercontent.com/u/1/drive-viewer/AEYmBYQ1HwJkrg6udT7O5bWm7oq9YXdqnZstWBKVacZNR41BO56WHw039lzQX_g5TPLPQhOshFd7Potqx3N3eVlo4BYWj5QwuQ=w1366-h633" /></div>
+                    <div className="col-lg-6 col-md-6 col-sm-6 mb-4">
+                        <div className='card fade-in-left' data-wow-duration=".5s" data-wow-delay=".5s" style={{ visibility: "visible", animationDuration: ".5s", animationDelay: "0.2s", animationName: "fadeInLeft" , backgroundColor: 'transparent', border: 0 }}><img src="https://lh3.googleusercontent.com/u/1/drive-viewer/AEYmBYQ1HwJkrg6udT7O5bWm7oq9YXdqnZstWBKVacZNR41BO56WHw039lzQX_g5TPLPQhOshFd7Potqx3N3eVlo4BYWj5QwuQ=w1366-h633" /></div>
                     </div>
-                    <div className="col-lg-6 col-md-6 col-sm-6">
-                        <div className="container container-table">
-                            <div className="row horizontal-center-row">
-                                <div className="text-center col-md-4 col-md-offset-4">TEXT</div>
-                            </div>
+                    <div className="col-lg-6 col-md-6 col-sm-6 justify-content-center">
+                        <div className="justify-content-center align-item-center margi"  data-wow-duration=".5s" data-wow-delay=".5s" style={{ visibility: "visible", animationDuration: ".5s", animationDelay: "0.2s", animationName: "fadeInRight" }}>
+                                <div className="text-center announce"><p>Check out the newly launched collection<br/><br/></p></div>
+                                <a href="/Product/100T0001"><button className='shopnowbutton'>Shop Now</button></a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const Home = () => {
         <>
             <HeadNavbar Setactbar='0' />
             <div style={{ margin: "20px 0px", padding: 5, backgroundColor: 'black', color: 'white', justifyContent: 'center', width: '100%' }}>
-                <marquee ><p style={{ justifyContent: 'inherit', marginBottom: 0, marginTop: 15 }}>Sales on live with 70% off on the first product!! grap it now.</p></marquee>
+                <marquee ><p style={{ justifyContent: 'inherit', marginBottom: 0, marginTop: 15 }}>Sales on live with 70% off on the first product!! grab it now.</p></marquee>
             </div>
             <Centerpot />
             <Serviceshort />

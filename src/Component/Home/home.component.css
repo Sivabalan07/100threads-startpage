@@ -1,0 +1,35 @@
+.shopnowbutton{
+    background-color: transparent;
+    color:rgb(68, 67, 67);
+    border: 2px solid rgb(68, 67, 67);
+    font-size: x-large;
+    align-items: center;
+    margin: 20px;
+    margin-left: 120px;
+    padding:10px
+}
+
+.shopnowbutton:hover{
+    background-color: rgb(68, 67, 67);
+    color:white;
+    border:0px;
+}
+
+.announce{
+    font-size: xx-large;
+    font-family:  "Segoe Print", Times, serif;
+}
+
+@media(max-width:385px){
+    .shopnowbutton{
+        margin:0px 70px;
+        margin-bottom: 50px;
+    }
+    .margi{
+        margin-top: 0px;
+    }
+}
+
+.margi{
+    margin-top: 150px;
+}
