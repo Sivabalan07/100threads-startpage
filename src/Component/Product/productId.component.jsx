@@ -116,7 +116,7 @@ const ProductId = () => {
             Manufacturer-100threads<br/>
             Item weight-250 gms<br/>
             Item dimension LxW-12x10 inch<br/>
-            Net qty-1.count<br/>
+            Net qty-1.00 count<br/>
             Generic name -T-shirt<br />
           </p>
         </div>
