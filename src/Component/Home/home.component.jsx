@@ -5,8 +5,9 @@ const Home =() =>{
     return (
         <>
     <HeadNavbar Setactbar='0'/>
-
-   <marquee> <img class name="home_image" src="brand.png" alt="no preview available"></img></marquee>
+    <div style={{margin:"20px 0px",padding:5,backgroundColor:'black',color:'white',justifyContent:'center',width:'100%'}}>
+   <marquee ><p style={{justifyContent:'inherit',marginBottom:0,marginTop:15}}>Sales on live with 70% off on the first product!! grap itnow.</p></marquee>
+   </div>
     </>
     );
 }
