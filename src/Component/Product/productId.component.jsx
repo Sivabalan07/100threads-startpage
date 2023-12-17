@@ -66,7 +66,7 @@ const ProductId = () => {
             <label htmlFor="quantity">Quantity:</label>
             <img  src={minus} style={{width:40,height:40,padding:10}} onClick={subtractquantity}/>
             <input type="number" id="quantity" className="quantity-input" Value={quantity} min="1" max="15" onChange={(e)=> setQuantity(e.target.value)} style={{border:1, borderRadius:5,backgroundColor:'transparent',width:40,margin:0}}/>
-            <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-64.png" style={{width:40,height:40,padding:10}} onClick={addquantity}/>
+            <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-64.png" style={{width:40,height:40,padding:10,paddingLeft:0,paddingRight:20}} onClick={addquantity}/>
           </div>
 
           <button
