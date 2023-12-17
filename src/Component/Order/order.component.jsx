@@ -33,7 +33,7 @@ const Order = () => {
         method: 'POST',
         body: JSON.stringify({
           // Add parameters here
-          data:jsonst
+          jsonst
         }),
         headers: {
           'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
@@ -41,15 +41,19 @@ const Order = () => {
         },
       })
          .then((response) => {
-          if(response.status===200)
-          return response.json();})
+          var data =response.json();
+          if(response.status!==200){
+          alert("There has been a issue data. please try after some times");
+          throw "order failed"
+        }
+          return data;})
          .then((data) => {
             console.log(data);
-            alert(`Order placed successfully with order id: ${data.order_id} `)
+          alert(`Order placed successfully with order id: ${data.order_id} `)
             // Handle data
          })
          .catch((err) => {
-            console.log(err.message);
+            console.log(err.message,err);
          });
     //   $.ajax({
     //     url: 'https://demo-flask-app-nandhadeva.vercel.app/orderplace',
