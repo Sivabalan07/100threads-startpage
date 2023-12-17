@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { useParams } from 'react-router-dom';
 import HeadNavbar from '../Header.Component';
 import './products.component.css'; // Include your custom CSS file for additional styling
+import minus from "../../asset/minus.svg";
  
 
 const ProductId = () => {
@@ -63,7 +64,7 @@ const ProductId = () => {
 
           <div className="quantity-section">
             <label htmlFor="quantity">Quantity:</label>
-            <img  style={{width:40,height:40}} onClick={subtractquantity}/>
+            <img  src={minus} style={{width:40,height:40,padding:10}} onClick={subtractquantity}/>
             <input type="number" id="quantity" className="quantity-input" Value={quantity} min="1" max="15" onChange={(e)=> setQuantity(e.target.value)} style={{border:1, borderRadius:5,backgroundColor:'transparent',width:40,margin:0}}/>
             <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-64.png" style={{width:40,height:40,padding:10}} onClick={addquantity}/>
           </div>
