@@ -35,7 +35,10 @@ const Order = () => {
     'Content-Type': 'application/json'
       },
       cache: 'no-cache',
-      method: 'POST'
+      method: 'POST',
+      mode: 'no-cors',
+      redirect: 'follow',
+      referrer: 'no-referrer',
     })
       .then(function (response) {
         console.log(response);
