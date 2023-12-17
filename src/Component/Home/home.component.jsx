@@ -6,7 +6,7 @@ const Home =() =>{
         <>
     <HeadNavbar Setactbar='0'/>
     <div style={{margin:"20px 0px",padding:5,backgroundColor:'black',color:'white',justifyContent:'center',width:'100%'}}>
-   <marquee ><p style={{justifyContent:'inherit',marginBottom:0,marginTop:15}}>Sales on live with 70% off on the first product!! grap itnow.</p></marquee>
+   <marquee ><p style={{justifyContent:'inherit',marginBottom:0,marginTop:15}}>Sales on live with 70% off on the first product!! grap it now.</p></marquee>
    </div>
     </>
     );
