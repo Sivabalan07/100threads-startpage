@@ -28,28 +28,44 @@ const Order = () => {
     event.preventDefault();
     jsonst.customer_number=jsonst.customer_number.includes(+91)?jsonst.customer_number: `+91${jsonst.customer_number}`;
     console.log(jsonst);
-    var orderId = fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
-      body: JSON.stringify(jsonst),
-      headers: {
-        'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
-    'Content-Type': 'application/json'
-      },
-      cache: 'no-cache',
-      method: 'POST',
-      mode: 'no-cors',
-      redirect: 'follow',
-      referrer: 'no-referrer',
-    })
-      .then(function (response) {
-        console.log(response);
-        if (response.status === 200) {
-          alert('ordered successfully');
-        } else {
-          alert('Issues saving');
-        }
-        return response.json();
-      });
-    console.log(orderId);
+    var orderId = 
+      fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
+        method: 'POST',
+        body: JSON.stringify({
+          // Add parameters here
+          data:jsonst
+        }),
+        headers: {
+          'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
+          'Content-Type': 'application/json',
+        },
+      })
+         .then((response) => {
+          if(response.status===200)
+          return response.json();})
+         .then((data) => {
+            console.log(data);
+            alert(`Order placed successfully with order id: ${data.order_id} `)
+            // Handle data
+         })
+         .catch((err) => {
+            console.log(err.message);
+         });
+    //   $.ajax({
+    //     url: 'https://demo-flask-app-nandhadeva.vercel.app/orderplace',
+    //     type: 'post',
+    //     data: JSON.stringify({
+    //       data: jsonst}),
+    //     headers: {
+    //       'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
+    //       'Content-Type': 'application/json' , //for object property name, use quoted notation shown in second
+    //       "Access-Control-Allow-Origin": "*",
+    // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    //     },
+    //     success: function (data) {
+    //         console.info(data);
+    //     }
+    // });
     event.preventDefault();
   }
   const jsonchange = (event) => {
