@@ -71,7 +71,7 @@ const ProductId = () => {
 
           <button
             className="add-to-cart-btn btn btn-dark"
-            onClick={() => {window.location.href=`/order/${id}?size=${Size}&quantity=${quantity}&name=Knit top full sleeve&price=479`}}
+            onClick={() => {window.location.href=`/order/${id}?size=${Size}&quantity=${quantity}&name=Turtleneck with full sleeve&price=479`}}
           >
             Buy it now
           </button>
