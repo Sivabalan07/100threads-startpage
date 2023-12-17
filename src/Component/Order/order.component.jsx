@@ -12,7 +12,7 @@ const Order = () => {
   const jsonst = {
     product_id: id,
     product_size: size,
-    product_name: quantity,
+    product_name: name,
     customer_name: "", //formData.get("Name")
     customer_email: "",  //formData.get("Email"),
     customer_number: "", //formData.get("PhoneNumber"),
