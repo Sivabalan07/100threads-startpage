@@ -1,114 +1,95 @@
 import React from 'react';
-import {useState} from 'react';
-import {useParams} from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import HeadNavbar from "../Header.Component";
 
-const Order =() =>{
-    const {id} = useParams();
-    const size = "f";
-    function submitform(formData){
-      'use server';
-        var date = new Date().toLocaleString("en-GB", {timeZone: 'Asia/Kolkata'});
-        const jsonst={
-            product_id:id+size,
-            customer_name:formData.get("Name"),
-            customer_email:formData.get("Email"),
-            customer_number:formData.get("PhoneNumber"),
-            customer_address:formData.get("Address"),
-            order_date:date.slice(0,10),
-            order_time:date.slice(12,29),
-            stkid:"",
-            order_quality:formData.get("Quality"),
-            referral_code:formData.get("Referral")
-        }
-        console.log(jsonst);
-        // jsonst.product_id=id+size;
-        // jsonst.customer_name=formData.get("Name");
-        var orderId=fetch('', {
+const Order = () => {
+  const { id } = useParams();
+  const [searchquery] = useSearchParams();
+  const quantity = searchquery.get("quantity");
+  const size = searchquery.get("size");
+  const price=searchquery.get("price");
+  const name=searchquery.get("name");
+  const jsonst = {
+    product_id: id,
+    product_size: size,
+    product_name: quantity,
+    customer_name: "", //formData.get("Name")
+    customer_email: "",  //formData.get("Email"),
+    customer_number: "", //formData.get("PhoneNumber"),
+    customer_address: "",  //formData.get("Address"),
+    order_date: new Date().toLocaleString("en-GB", { timeZone: 'Asia/Kolkata' }).slice(0, 10),
+    order_time: new Date().toLocaleString("en-GB", { timeZone: 'Asia/Kolkata' }).slice(12, 29),
+    stkid: "",
+    price_amount:price,
+    order_quality: quantity, //formData.get("Quality"),
+    referral_code: "007", //formData.get("Referral")
+  }
+  const submitform = (event) => {
+    event.preventDefault();
+    jsonst.customer_number=jsonst.customer_number.includes(+91)?jsonst.customer_number: `+91${jsonst.customer_number}`;
+    console.log(jsonst);
+    var orderId = fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
       body: JSON.stringify(jsonst),
-      cache: 'no-cache',
-      credentials: 'same-origin',
       headers: {
-        'content-type': 'application/json'
+        'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
+    'Content-Type': 'application/json'
       },
+      cache: 'no-cache',
       method: 'POST',
-      mode: 'cors',
+      mode: 'no-cors',
       redirect: 'follow',
       referrer: 'no-referrer',
     })
       .then(function (response) {
         console.log(response);
         if (response.status === 200) {
-          alert('Saved');
+          alert('ordered successfully');
         } else {
           alert('Issues saving');
         }
         return response.json();
       });
-    }
+    console.log(orderId);
+    event.preventDefault();
+  }
+  const jsonchange = (event) => {
+    jsonst[event.target.name] = event.target.value;
+  }
 
-    const FormRender=()=>{
-      return (<form onSubmit={submitform}>
-        <div className="form-row" >
-          <div className="form-group col-md-6">
-            <label htmlFor="inputEmail">Email</label>
-            <input type="email" className="form-control" id="inputEmail" placeholder="Email" name="Email"/>
+  const FormRender = () => {
+    return (
+      <div className='container col-lg-2  ' style={{paddingLeft:50,paddingTop:50}}>
+        <form onSubmit={submitform}>
+          <div className="form-row" >
+            <div className="form-group col-md-6" style={{minWidth:'max-content'}}>
+              <label htmlFor="inputEmail">Email</label>
+              <input type="email" className="form-control" id="inputEmail" placeholder="Email" name="customer_email" onChange={jsonchange} />
+            </div>
+            <div className="form-group col-md-6" style={{minWidth:'max-content'}}>
+              <label htmlFor="inputname">Name</label>
+              <input type="text" className="form-control" id="inputname" placeholder="Name" name="customer_name" onChange={jsonchange} />
+            </div>
           </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="inputname">Name</label>
-            <input type="text" className="form-control" id="inputname" placeholder="Name"/>
+          <div className="form-group col-md-7 " style={{minWidth:'max-content'}}>
+            <label htmlFor="inputAddress">Address</label>
+            <input type="text" className="form-control"  placeholder="your full address" name="customer_address" onChange={jsonchange} />
           </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="inputAddress">Address</label>
-          <input type="text" className="form-control" id="inputAddress" placeholder="your full address" name="Address"/>
-        </div>
-        <div className="form-group">
-          <label htmlFor="inputAddress2">Address 2</label>
-          <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"/>
-        </div>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label htmlFor="inputCity">City</label>
-            <input type="text" className="form-control" id="inputCity"/>
+
+          <div className="form-group col-md-6 " style={{minWidth:'max-content'}}>
+            <label htmlFor="inputAddress">Phone no</label>
+            <input type="text" className="form-control"  placeholder="your mobile number" name="customer_number" onChange={jsonchange} />
           </div>
-          <div className="form-group col-md-4">
-            <label htmlFor="inputState">State</label>
-            <select id="inputState" className="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div className="form-group col-md-2">
-            <label htmlFor="inputZip">Zip</label>
-            <input type="text" className="form-control" id="inputZip"/>
-          </div>
-        </div>
-        <div className="form-group">
-          <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck"/>
-            <label className="form-check-label" htmlFor="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div>
-        <button type="submit" className="btn btn-primary">Sign in</button>
-      </form>);
-    }
-    function search() {
-      console.log("alert");
-      // const query = formData.get("query");
-      // alert(`You searched htmlFor '${query}'`);
-    }
-   function Search() {
-      return (
-      <>
-          <input name="query"/>
-          <button type="submit" onClick={search}>Search</button>
-        
-      </>
-      );
-    }
+          
+          <div style={{padding:10}}></div>
+  
+          <button type="submit" className="btn btn-dark">Place order</button>
+        </form>
+      </div>);
+  }
+
+
+  //example file
+  {/*
     const ExpenseForm = () => { const [enteredTitle, setEnteredTitle] = useState("") ;const [enteredAmount, setEnteredAmount] = useState(""); const [enteredDate, setEnteredDate] = useState("")
 
 //   const [userInput, setUserInput] = useState({ //     enteredTitle: "", //     enteredAmount: "", //     enteredDate: "", //   })
@@ -152,14 +133,22 @@ return ( <form onSubmit={submitHander}> <div className="new-expense__controls"> 
             value={enteredDate || ""}
             onChange={dateChangeHandler}
           /> </div> <div className="new-expense__actions"> <button type="submit">Add Expense</button> </div> </div> </form> ); }
-    return(
-        <>
-    <HeadNavbar />
-    <p>Size : {size} and Id : {id}</p>
-    {/* <FormRender/> */}
-    <ExpenseForm/>
-    <Search/>
+
+*/}
+
+  return (
+    <>
+      <HeadNavbar />
+      <div className='container-sm align-item-center mx-auto' style={{textAlign:'center',borderRadius:'25%',marginTop:30}}>
+      <p><div style={{fontSize:20}}><b>Order Details:</b><br/>
+      <br/>
+      {name}</div>
+      Size : {size} and Id : {id}</p>
+      </div>
+      <FormRender />
+      {/* <ExpenseForm/>
+    <Search/> */}
     </>
-    );
+  );
 }
 export default Order;

@@ -14,7 +14,9 @@
 }
 
 .image {
-    width: 100%;
+    width: 60vw;
+    max-width: 420px;
+    max-height: 280px;
 }
 
 .text {
@@ -24,7 +26,7 @@
 }
 
 
-@media only screen and (max-width:400px) {
+@media (max-width:600px) {
     .cards {
         width: auto;
     }
@@ -75,16 +77,18 @@
 /* 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 } */
 
 .card {
   width: 18rem;
   margin-bottom: 20px;
+  overflow:hidden;
 }
 .pro_details{
-    padding-top: 30px;
+    padding: 50px;
+    max-width: max-content;
 }
 .price {
   display: flex;
@@ -95,6 +99,7 @@
 /* own code */
 #main {
   display: flex;
+  flex-wrap: wrap;
   padding: 30px;
   justify-content: flex-start; /* or flex-start, depending on your preference */
 }
@@ -114,7 +119,6 @@
 }
 
 /*   ends */
-
 
 .card-img-top:hover {
     transform: scale(1.1); /* Increase the size on hover */
@@ -155,7 +159,6 @@
   
   .add-to-cart-btn {
     padding: 10px;
-    background-color: #007bff; /* Bootstrap's primary color */
     color: #fff;
     cursor: pointer;
     border: none;
@@ -166,4 +169,6 @@
   .add-to-cart-btn:hover {
     background-color: #0056b3; /* Darker shade on hover */
   }
+
+
   

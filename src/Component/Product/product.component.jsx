@@ -1,117 +1,115 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HeadNavbar from "../Header.Component";
 import "./products.component.css"
 const Product = () => {
-  const [isActive, setIsActive] = useState(false);
 
-  const toggleClass = () => {
-    setIsActive(!isActive);
-  };
-  const handleOrderNow = () => {
-    window.location.href = './product/hfyjfju';
+  const handleOrderNow = (event) => {
+    var id=event.target.value;
+    window.location.href = `product/${id}`;
   };
   return (
     <>
       <HeadNavbar Setactbar='1' />
       
-<hr></hr>
 
-<div class="container" style={{paddingTop:'2rem',paddingBottom:'2rem'}}>
-  <div class="d-flex flex-wrap justify-content-between">
-    <div class="card mb-5" style={{width: '18rem'}}>
-      <img class="card-img-top" src="cloth1.jpg" alt="Product 1"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 1</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1500</strike></p>
-          <p class="discount"><b>&#8377;1300</b></p>
-        </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
+<div className="container" style={{paddingTop:'2rem',paddingBottom:'2rem'}}>
+  <div className="d-flex flex-wrap justify-content-between">
+    <div className="card mb-5" style={{width: '18rem'}}>
+      <div className="image">
+      <img className="card-img-top" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYST1w955IGZkexvLqa9WO0CkKEmjLYSw8CVsgHrEM1UBFeV4gTSYkzVgneBAy4R9r_Z9kjWHk8WwucaAsiMSidxGd2Pfw=w2048-h1456" alt="Product 1"/>
       </div>
-    </div>
-
-    <div class="card mb-5" style={{width: '18rem',margin: '10px'}}>
-      <img class="card-img-top" src="cloth2.jpg" alt="Product 2"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 2</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1200</strike></p>
-          <p class="discount"><b>&#8377;1000</b></p>
+      <div className="card-body">
+        <h5 className="card-title">Knit Top full sleeve</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1679</strike></p>
+          <p className="discount"><b>&#8377;799</b></p>
         </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
-      </div>
-    </div>
-    <div class="card mb-5" style={{width: '18rem',margin: '10px'}}>
-      <img class="card-img-top" src="cloth2.jpg" alt="Product 2"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 2</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1200</strike></p>
-          <p class="discount"><b>&#8377;1000</b></p>
-        </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
+        <center><button onClick={handleOrderNow} className="btn btn-dark"value="100T0001">Order Now</button></center>
       </div>
     </div>
 
-    <div class="card mb-5" style={{width: '18rem',margin: '10px'}}>
-      <img class="card-img-top" src="cloth2.jpg" alt="Product 2"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 2</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1200</strike></p>
-          <p class="discount"><b>&#8377;1000</b></p>
+    {/* <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
+      <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>
+      <div className="card-body">
+        <h5 className="card-title">Product 2</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1200</strike></p>
+          <p className="discount"><b>&#8377;1000</b></p>
         </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
+        <center><button onClick={handleOrderNow} className="btn btn-dark">Order Now</button></center>
+      </div>
+    </div>
+    <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
+      <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>
+      <div className="card-body">
+        <h5 className="card-title">Product 2</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1200</strike></p>
+          <p className="discount"><b>&#8377;1000</b></p>
+        </div>
+        <center><button onClick={handleOrderNow} className="btn btn-dark">Order Now</button></center>
       </div>
     </div>
 
-    <div class="card mb-5" style={{width: '18rem',margin: '10px'}}>
-      <img class="card-img-top" src="cloth2.jpg" alt="Product 2"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 2</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1200</strike></p>
-          <p class="discount"><b>&#8377;1000</b></p>
+    <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
+      <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>
+      <div className="card-body">
+        <h5 className="card-title">Product 2</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1200</strike></p>
+          <p className="discount"><b>&#8377;1000</b></p>  
         </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
+        <center><button onClick={handleOrderNow} className="btn btn-dark" value="100T0001">Order Now</button></center>
       </div>
     </div>
 
-    <div class="card mb-5" style={{width: '18rem',margin: '10px'}}>
-      <img class="card-img-top" src="cloth2.jpg" alt="Product 2"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 2</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1200</strike></p>
-          <p class="discount"><b>&#8377;1000</b></p>
+    <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
+      <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>
+      <div className="card-body">
+        <h5 className="card-title">Product 2</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1200</strike></p>
+          <p className="discount"><b>&#8377;1000</b></p>
         </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
+        <center><button onClick={handleOrderNow} className="btn btn-dark">Order Now</button></center>
       </div>
     </div>
 
-    <div class="card mb-5" style={{width: '18rem',margin: '10px'}}>
-      <img class="card-img-top" src="cloth2.jpg" alt="Product 2"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 2</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1200</strike></p>
-          <p class="discount"><b>&#8377;1000</b></p>
+    <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
+      <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>
+      <div className="card-body">
+        <h5 className="card-title">Product 2</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1200</strike></p>
+          <p className="discount"><b>&#8377;1000</b></p>
         </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
+        <center><button onClick={handleOrderNow} className="btn btn-dark">Order Now</button></center>
       </div>
     </div>
 
-    <div class="card mb-5" style={{width: '18rem',margin: '10px'}}>
-      <img class="card-img-top" src="cloth2.jpg" alt="Product 2"/>
-      <div class="card-body">
-        <h5 class="card-title">Product 2</h5>
-        <div class="price">
-          <p class="old-price"><strike>&#8377;1200</strike></p>
-          <p class="discount"><b>&#8377;1000</b></p>
+    <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
+      <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>
+      <div className="card-body">
+        <h5 className="card-title">Product 2</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1200</strike></p>
+          <p className="discount"><b>&#8377;1000</b></p>
         </div>
-        <center><button onClick={handleOrderNow} class="btn btn-primary">Order Now</button></center>
+        <center><button onClick={handleOrderNow} className="btn btn-dark">Order Now</button></center>
       </div>
     </div>
+
+    <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
+      <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>
+      <div className="card-body">
+        <h5 className="card-title">Product 2</h5>
+        <div className="price">
+          <p className="old-price"><strike>&#8377;1200</strike></p>
+          <p className="discount"><b>&#8377;1000</b></p>
+        </div>
+        <center><button onClick={handleOrderNow} className="btn btn-dark">Order Now</button></center>
+      </div> 
+    </div>*/}
 
 
     {/* <!-- Repeat this pattern for more products --> */}

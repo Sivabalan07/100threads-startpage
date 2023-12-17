@@ -1,5 +1,6 @@
 import React from 'react';
 import HeadNavbar from "../Header.Component";
+import "./contact.component.css"
 
 
 const Contact = () => {
@@ -7,7 +8,7 @@ const Contact = () => {
     return (
         <>
             <HeadNavbar Setactbar='3' />
-            <div style={{ textAlign: "Left", padding: 40, fontFamily: "source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace", justifyContent: 'center' }}>
+            <div className="contactstyle">
                 <p>
                     Trade name: 100 Threads Apparel
                     <br /><br />
@@ -15,8 +16,6 @@ const Contact = () => {
                     <br /><br />
                     Physical address:  manathottam Near AVP school, Thirumurgan poondi ring road, Tirupur-641652 TN, India.
                     <br /><br />
-
-                    GST NUMBER :
                 </p>
             </div>
             
