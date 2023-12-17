@@ -116,7 +116,7 @@ const Order = () => {
       <p><div style={{fontSize:20}}><b>Order Details:</b><br/>
       <br/>
       {name}</div>
-      Size : {size} and Id : {id}</p>
+      Size : {size} Id : {id} quantity: {quantity}</p>
       </div>
       <FormRender />
       {/* <ExpenseForm/>
