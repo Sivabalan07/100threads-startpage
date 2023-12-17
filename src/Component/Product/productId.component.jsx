@@ -38,9 +38,9 @@ const ProductId = () => {
           </div>
           <div className="previewImage">
             <img value="0" src={imagearray[0]} onClick={() => setImage(0)} />
-            <img value="1" src={imagearray[1]} onClick={() => setImage(3)} />
+            <img value="1" src={imagearray[3]} onClick={() => setImage(3)} />
             <img value="2" src={imagearray[2]} onClick={() => setImage(2)} />
-            <img value="3" src={imagearray[3]} onClick={() => setImage(1)} />
+            <img value="3" src={imagearray[1]} onClick={() => setImage(1)} />
             <img value="4" src={imagearray[4]} onClick={() => setImage(4)} />
           </div>
         </div>
