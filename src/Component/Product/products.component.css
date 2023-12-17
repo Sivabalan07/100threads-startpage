@@ -101,10 +101,17 @@
   justify-content: flex-start; /* or flex-start, depending on your preference */
 }
 
+@media (max-width:420px){
+  .pro_details{
+    padding:20px;
+  }
+}
+
 .img {
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
-  display: block;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
 #img_container {
@@ -173,4 +180,18 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-  
+.previewImage{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: inherit;
+}
+
+.previewImage img{
+  width: 100px ;
+  height: 100px ;
+  padding:10px;
+  border-radius: 20px;
+  object-fit: contain;
+
+}

@@ -19,10 +19,10 @@ const Product = () => {
       <div className="image" style={{overflow:'hidden'}}>
       <img className="card-img-top" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYST1w955IGZkexvLqa9WO0CkKEmjLYSw8CVsgHrEM1UBFeV4gTSYkzVgneBAy4R9r_Z9kjWHk8WwucaAsiMSidxGd2Pfw=w2048-h1456" alt="Product 1"/>
       </div>
-      <div className="card-body">
+      <div className="card-body" style={{backgroundColor:'#000',color:'#fff'}}>
         <h5 className="card-title">Turtleneck with full sleeve</h5>
         <div className="price">
-          <p className="old-price"><strike>&#8377;1679</strike></p>
+          <p className="old-price"><strike>&#8377;1679</strike><div style={{font:'Inconsolata',fontSize:12}}>(70% discount)</div></p>
           <p className="discount"><b>&#8377;479</b></p>
         </div>
         {/* <center><button onClick={handleOrderNow} className="btn btn-dark"value="100T0001">Order Now</button></center> */}
