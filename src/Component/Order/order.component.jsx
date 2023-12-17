@@ -28,12 +28,11 @@ const Order = () => {
     event.preventDefault();
     jsonst.customer_number=jsonst.customer_number.includes(+91)?jsonst.customer_number: `+91${jsonst.customer_number}`;
     console.log(jsonst);
-    var orderId = 
       fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
         method: 'POST',
         body: JSON.stringify({
           // Add parameters here
-          jsonst
+          data:jsonst
         }),
         headers: {
           'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
