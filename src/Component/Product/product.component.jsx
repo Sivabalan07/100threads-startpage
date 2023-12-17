@@ -1,32 +1,34 @@
 import React from 'react';
 import HeadNavbar from "../Header.Component";
-import "./products.component.css"
+import "./products.component.css";
 const Product = () => {
 
-  const handleOrderNow = (event) => {
-    var id=event.target.value;
-    window.location.href = `product/${id}`;
-  };
+  // const handleOrderNow = (event) => {
+  //   var id=event.target.value;
+  //   window.location.href = `product/${id}`;
+  // };
   return (
     <>
       <HeadNavbar Setactbar='1' />
       
 
-<div className="container" style={{paddingTop:'2rem',paddingBottom:'2rem'}}>
+<div className="container" style={{padding:'2rem'}}>
   <div className="d-flex flex-wrap justify-content-between">
-    <div className="card mb-5" style={{width: '18rem'}}>
-      <div className="image">
+    <a href="product/100T0001">
+    <div className="card mb-5" style={{width: '18rem', border:'none',backgroundColor:'transparent'}}>
+      <div className="image" style={{overflow:'hidden'}}>
       <img className="card-img-top" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYST1w955IGZkexvLqa9WO0CkKEmjLYSw8CVsgHrEM1UBFeV4gTSYkzVgneBAy4R9r_Z9kjWHk8WwucaAsiMSidxGd2Pfw=w2048-h1456" alt="Product 1"/>
       </div>
       <div className="card-body">
-        <h5 className="card-title">Knit Top full sleeve</h5>
+        <h5 className="card-title">Turtleneck with full sleeve</h5>
         <div className="price">
           <p className="old-price"><strike>&#8377;1679</strike></p>
-          <p className="discount"><b>&#8377;799</b></p>
+          <p className="discount"><b>&#8377;479</b></p>
         </div>
-        <center><button onClick={handleOrderNow} className="btn btn-dark"value="100T0001">Order Now</button></center>
+        {/* <center><button onClick={handleOrderNow} className="btn btn-dark"value="100T0001">Order Now</button></center> */}
       </div>
     </div>
+    </a>
 
     {/* <div className="card mb-5" style={{width: '18rem',margin: '10px'}}>
       <img className="card-img-top" src="cloth2.jpg" alt="Product 2"/>

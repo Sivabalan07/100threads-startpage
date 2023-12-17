@@ -4,6 +4,7 @@
     height: 50vh;
     border: 1px solid black;
     border-radius: 5px;
+    border : none;
 }
 
 .details {
@@ -13,11 +14,7 @@
     flex-wrap: wrap;
 }
 
-.image {
-    width: 60vw;
-    max-width: 420px;
-    max-height: 280px;
-}
+
 
 .text {
     text-align: center;
@@ -88,7 +85,7 @@
 }
 .pro_details{
     padding: 50px;
-    max-width: max-content;
+    max-width: 470px;
 }
 .price {
   display: flex;
@@ -170,5 +167,10 @@
     background-color: #0056b3; /* Darker shade on hover */
   }
 
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
   
