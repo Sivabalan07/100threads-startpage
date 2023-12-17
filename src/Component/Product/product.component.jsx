@@ -25,7 +25,7 @@ const Product = () => {
           <p className="old-price"><strike>&#8377;1679</strike><div style={{font:'Inconsolata',fontSize:12}}>(70% discount)</div></p>
           <p className="discount"><b>&#8377;479</b></p>
         </div>
-        {/* <center><button onClick={handleOrderNow} className="btn btn-dark"value="100T0001">Order Now</button></center> */}
+        <center><button className="btn btn-dark" style={{border: '2px solid white'}} value="100T0001">Buy Now</button></center>
       </div>
     </div>
     </a>

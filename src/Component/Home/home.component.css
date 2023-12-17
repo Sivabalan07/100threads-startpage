@@ -20,16 +20,20 @@
     font-family:  "Segoe Print", Times, serif;
 }
 
+.margi{
+    margin-top: 150px;
+}
+
 @media(max-width:385px){
     .shopnowbutton{
         margin:0px 70px;
-        margin-bottom: 50px;
+        margin-bottom: 65px;
     }
     .margi{
         margin-top: 0px;
     }
+    .mb-4{
+        margin-bottom: 0px;
+    }
 }
 
-.margi{
-    margin-top: 150px;
-}
