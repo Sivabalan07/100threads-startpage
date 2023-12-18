@@ -7,8 +7,8 @@ const Order = () => {
   const [searchquery] = useSearchParams();
   const quantity = searchquery.get("quantity");
   const size = searchquery.get("size");
-  const price=searchquery.get("price");
-  const name=searchquery.get("name");
+  const price = searchquery.get("price");
+  const name = searchquery.get("name");
   const jsonst = {
     product_id: id,
     product_size: size,
@@ -20,40 +20,41 @@ const Order = () => {
     order_date: new Date().toLocaleString("en-GB", { timeZone: 'Asia/Kolkata' }).slice(0, 10),
     order_time: new Date().toLocaleString("en-GB", { timeZone: 'Asia/Kolkata' }).slice(12, 29),
     stkid: "",
-    price_amount:price,
+    price_amount: price,
     order_quality: quantity, //formData.get("Quality"),
     referral_code: "007", //formData.get("Referral")
   }
   const submitform = (event) => {
     event.preventDefault();
-    jsonst.customer_number=jsonst.customer_number.includes(+91)?jsonst.customer_number: `+91${jsonst.customer_number}`;
+    jsonst.customer_number = jsonst.customer_number.includes(+91) ? jsonst.customer_number : `+91${jsonst.customer_number}`;
     console.log(jsonst);
-      fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
-        method: 'POST',
-        body: JSON.stringify({
-          // Add parameters here
-          data:jsonst
-        }),
-        headers: {
-          'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
-          'Content-Type': 'application/json',
-        },
-      })
-         .then((response) => {
-          var data =response.json();
-          if(response.status!==200){
+    fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
+      method: 'POST',
+      body: JSON.stringify({
+        // Add parameters here
+        data: jsonst
+      }),
+      headers: {
+        'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        var data = response.json();
+        if (response.status !== 200) {
           alert("There has been a issue data. please try after some times");
           throw "order failed";
         }
-          return data;})
-         .then((data) => {
-            console.log(data);
-          alert(`Order placed successfully with order id: ${data.order_id} `)
-            // Handle data
-         })
-         .catch((err) => {
-            console.log(err.message,err);
-         });
+        return data;
+      })
+      .then((data) => {
+        console.log(data);
+        alert(`Order placed successfully with order id: ${data.order_id} `)
+        // Handle data
+      })
+      .catch((err) => {
+        console.log(err.message, err);
+      });
     //   $.ajax({
     //     url: 'https://demo-flask-app-nandhadeva.vercel.app/orderplace',
     //     type: 'post',
@@ -77,49 +78,52 @@ const Order = () => {
 
   const FormRender = () => {
     return (
-      <div className='container-xl d-flex justify-content-center  ' style={{paddingLeft:50,paddingTop:50}}>
+      <div className='container-xl d-flex justify-content-center  ' style={{ paddingLeft: 50, paddingTop: 50 }}>
         <form onSubmit={submitform}>
           <div className="form-row" >
-            <div className="form-group col-md-6" style={{minWidth:'max-content'}}>
+            <div className="form-group col-md-6" style={{ minWidth: 'max-content' }}>
               <label htmlFor="inputEmail">Email</label>
               <input type="email" className="form-control" id="inputEmail" placeholder="Email" name="customer_email" onChange={jsonchange} />
             </div>
-            <div className="form-group col-md-6" style={{minWidth:'max-content'}}>
+            <div className="form-group col-md-6" style={{ minWidth: 'max-content' }}>
               <label htmlFor="inputname">Name</label>
               <input type="text" className="form-control" id="inputname" placeholder="Name" name="customer_name" onChange={jsonchange} />
             </div>
           </div>
-          <div className="form-group col-md-6 " style={{minWidth:'max-content'}}>
+          <div className="form-group col-md-6 " style={{ minWidth: 'max-content' }}>
             <label htmlFor="inputAddress">Address</label>
-            <input type="text" className="form-control"  placeholder="your full address" name="customer_address" onChange={jsonchange} />
+            <input type="text" className="form-control" placeholder="your full address" name="customer_address" onChange={jsonchange} />
           </div>
 
-          <div className="form-group col-md-6 " style={{minWidth:'max-content'}}>
+          <div className="form-group col-md-6 " style={{ minWidth: 'max-content' }}>
             <label htmlFor="inputAddress">Phone no</label>
-            <input type="text" className="form-control"  placeholder="your mobile number" name="customer_number" onChange={jsonchange} />
+            <input type="text" className="form-control" placeholder="your mobile number" name="customer_number" onChange={jsonchange} />
           </div>
-          
-          <div style={{padding:10}}></div>
-  
+
+          <div style={{ padding: 10 }}></div>
+
           <button type="submit" className="btn btn-dark">Place order</button>
         </form>
       </div>);
   }
 
 
-  
+
 
   return (
     <>
       <HeadNavbar />
-      <div className='container-sm align-item-center mx-auto' style={{textAlign:'center',borderRadius:'25%',marginTop:30}}>
-      <p><div style={{fontSize:20}}><b>Order Details:</b><br/>
-      <br/>
-      {name}</div>
-      Size : {size} Id : {id} quantity: {quantity}</p>
-      </div>
+      <div className='container-sm align-item-center mx-auto' style={{ textAlign: 'center', borderRadius: '25%', marginTop: 30 }}>
+        <div style={{ fontSize: 20 }}>
+          <p><b>Order Details:</b><br /><br />
+          {name}
+          </p>
+          </div>
+          <p>
+        Size : {size} and Id : {id} <br/> quantity: {quantity}</p>
+    </div >
       <FormRender />
-      {/* <ExpenseForm/>
+  {/* <ExpenseForm/>
     <Search/> */}
     </>
   );
