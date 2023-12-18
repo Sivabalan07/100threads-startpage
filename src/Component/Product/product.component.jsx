@@ -113,9 +113,6 @@ const Product = () => {
       </div> 
     </div>*/}
 
-
-    {/* <!-- Repeat this pattern for more products --> */}
-
   </div>
 </div>
 

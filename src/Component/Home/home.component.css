@@ -4,7 +4,6 @@
     border: 2px solid rgb(68, 67, 67);
     font-size: x-large;
     align-items: center;
-    margin: 20px;
     margin-left: 120px;
     padding:10px
 }
@@ -24,9 +23,9 @@
     margin-top: 150px;
 }
 
-@media(max-width:385px){
+@media(max-width:425px){
     .shopnowbutton{
-        margin:0px 70px;
+        margin:0px 130px;
         margin-bottom: 65px;
     }
     .margi{
@@ -37,3 +36,9 @@
     }
 }
 
+@media(max-width:385px){
+    .shopnowbutton{
+        margin:0px 80px;
+        margin-bottom: 65px;
+    }
+}

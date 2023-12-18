@@ -1,18 +1,24 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import HeadNavbar from '../Header.Component';
 import './products.component.css'; // Include your custom CSS file for additional styling
 import minus from "../../asset/minus.svg";
 
 
+
 const ProductId = () => {
-  const imagearray = ["https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYTUP2YmHYzll02_40lU1WPRsvxJC7h1eC2ftKi2heNmloKcLtGanzRNrQ7dHM6_Je7RmqUYEF8WyDRrpBnUmmlkq9VX=w1366-h633", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYTu_NYwzAeAZqSDAEBvnWcC3NFdNhwb1rKoWBsHrj-xMqvSkwgciI65ZPfd9rIwny4FW5-MIPMUUx-K1U1N0fv8eMr3=w2048-h1456", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYT_GCbj-IkswnYXLsN8gHTGSjzkqcY_Q32qWBetKRvVBldXrTSrCAgqW5bpQ8ui9iHhhaoO6cWyTTeTF3ALhTaG_1Aspw=w2048-h1456", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYQE3Scf6XIMGhZ5d362O7ntcs96SI_j9wPtlZo5_RuBdk0X_S_vsKvTWBVvsPyxj02jrk781NyViuiCNUpVsSCpuAPG=w2048-h1456", "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYST1w955IGZkexvLqa9WO0CkKEmjLYSw8CVsgHrEM1UBFeV4gTSYkzVgneBAy4R9r_Z9kjWHk8WwucaAsiMSidxGd2Pfw=w2048-h1456"]
+  const imagearray = ["https://lh3.googleusercontent.com/u/1/drive-viewer/AEYmBYQL7ov3B7rwZ9f1J44pChoLdYufy3F8ToWs1P-OqwCXsk-vNbwGXMjuqbrt0uscLYObF0pjBGEeNhGlFSYDMrgaaG9xng=w1960-h3344",
+   "https://lh3.googleusercontent.com/u/1/drive-viewer/AEYmBYRMBSnRN99KjMJaaYeVS3QffAHR6CD0plrNK2jn-_vDAZcSM7PjobC32a2tvykRoY6u7nXvXHSIwdEJszhsYevTyYFCfg=w1960-h3344",
+   "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYT_GCbj-IkswnYXLsN8gHTGSjzkqcY_Q32qWBetKRvVBldXrTSrCAgqW5bpQ8ui9iHhhaoO6cWyTTeTF3ALhTaG_1Aspw=w2048-h1456",
+   "https://lh3.googleusercontent.com/u/1/drive-viewer/AEYmBYQ-izfb4pXFo69U5z-OAlc0LkaKfrmhzeTx5jaAl5EuZ23W2Ga60kGegGI8ps5N1FmEMZ2Roz8fDOuMWPE-g3MR5N1z8w=w1960-h3344", 
+   "https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYST1w955IGZkexvLqa9WO0CkKEmjLYSw8CVsgHrEM1UBFeV4gTSYkzVgneBAy4R9r_Z9kjWHk8WwucaAsiMSidxGd2Pfw=w2048-h1456"]
 
 
   const { id } = useParams();
   const [Size, SetSize] = useState("XS");
   const [quantity, setQuantity] = useState(1);
   const [image, setImage] = useState(0);
+  const quantityref=useRef();
   const Sizechange = (event) => {
     SetSize(event.target.value);
   }
@@ -27,6 +33,15 @@ const ProductId = () => {
   const sharelink=()=>{
     navigator.share( {url: window.location.href});
   }
+
+  useEffect(()=>{
+    if(quantity>15){
+      setQuantity(15);
+      quantityref.Value=quantity;
+    }
+    if(quantity<1)
+    setQuantity(1);
+  },[quantity])
   useEffect(()=>{
     if(id!=="100T0001")
     window.location.href="/products"
@@ -58,8 +73,8 @@ const ProductId = () => {
           </p>
 
           <div className="price-section">
-            <p className="regular-price">Regular price Rs. 1,679.00</p>
-            <p className="sale-price">Sale price Rs. 479.00</p>
+            <p className="regular-price">Original price Rs. 1,679.00</p>
+            <p className="sale-price">Offer price Rs. 479.00</p>
             <p className="availability"></p>
           </div>
 
@@ -77,7 +92,7 @@ const ProductId = () => {
           <div className="quantity-section">
             <label htmlFor="quantity">Quantity:</label>
             <img src={minus} style={{ width: 40, height: 40, padding: 10 }} onClick={subtractquantity} />
-            <input type="number" id="quantity" className="quantity-input" Value={quantity} min="1" max="15" onChange={(e) => setQuantity(e.target.value)} style={{ border: 1, borderRadius: 5, backgroundColor: 'transparent', width: 40, margin: 0 }} />
+            <input ref={quantityref} type="number" id="quantity" className="quantity-input" Value={quantity} min="1" max="15" onChange={(e) => setQuantity(e.target.value)} style={{ border: 1, borderRadius: 5, backgroundColor: 'transparent', width: 40, margin: 0 }} />
             <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-64.png" style={{ width: 40, height: 40, padding: 10, paddingLeft: 0, paddingRight: 20 }} onClick={addquantity} />
           </div>
 
