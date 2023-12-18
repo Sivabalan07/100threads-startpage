@@ -23,7 +23,7 @@ const ProductId = () => {
     SetSize(event.target.value);
   }
   const addquantity = () => {
-    if (quantity < 15)
+    if (quantity < 50)
       setQuantity(quantity + 1)
   }
   const subtractquantity = () => {
@@ -35,8 +35,8 @@ const ProductId = () => {
   }
 
   useEffect(()=>{
-    if(quantity>15){
-      setQuantity(15);
+    if(quantity>50){
+      setQuantity(50);
     }
     if(quantity<1)
     setQuantity(1);
@@ -91,7 +91,7 @@ const ProductId = () => {
           <div className="quantity-section">
             <label htmlFor="quantity">Quantity:</label>
             <img src={minus} style={{ width: 40, height: 40, padding: 10 }} onClick={subtractquantity} />
-            <input ref={quantityref} type="number" id="quantity" className="quantity-input" value={quantity} min="1" max="15" onChange={(e) => setQuantity(e.target.value)} style={{ border: 1, borderRadius: 5, backgroundColor: 'transparent', width: 40, margin: 0 }} />
+            <input ref={quantityref} type="number" id="quantity" className="quantity-input" value={quantity} min="1" max="50" onChange={(e) => setQuantity(e.target.value)} style={{ border: 1, borderRadius: 5, backgroundColor: 'transparent', width: 40, margin: 0 }} />
             <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-64.png" style={{ width: 40, height: 40, padding: 10, paddingLeft: 0, paddingRight: 20 }} onClick={addquantity} />
           </div>
 
