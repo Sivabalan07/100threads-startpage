@@ -16,7 +16,6 @@ const Order = () => {
       window.location.href = "/products";
     }
   }, [])
-  const [ordersubmitbtn, setordersubmitbtn] = useState(true);
   const jsonst = {
     product_id: id,
     product_size: size,
@@ -40,11 +39,9 @@ const Order = () => {
   const submitform = (event) => {
     event.preventDefault();
     event.target.disabled=true;
-    setordersubmitbtn(false);
     console.log("off");
     if (checkjsonst()) {
       alert("given data is not enough");
-      setordersubmitbtn(true);
     }
     else {
       jsonst.customer_number = jsonst.customer_number.includes(+91) ? jsonst.customer_number : `+91${jsonst.customer_number}`;
@@ -109,7 +106,7 @@ const Order = () => {
 
           <div style={{ padding: 10 }}></div>
 
-          <button type="submit" className={`btn btn-dark ${ordersubmitbtn ? "" : "disabled"}`}>Place order</button>
+          <button type="submit" className="btn btn-dark">Place order</button>
         </form>
       </div>);
   }
