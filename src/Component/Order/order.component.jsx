@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import HeadNavbar from "../Header.Component";
+import { wait } from '@testing-library/user-event/dist/utils';
 
 const Order = () => {
   const { id } = useParams();
@@ -9,6 +10,13 @@ const Order = () => {
   const size = searchquery.get("size");
   const price = searchquery.get("price");
   const name = searchquery.get("name");
+  useEffect(() => {
+    if (id !== "100T0001" || !quantity || quantity.length === 0 || !size || size.length === 0 || !price || price.length === 0 || !name || name.length === 0) {
+      alert("select order details is not found");
+      window.location.href = "/products";
+    }
+  }, [])
+  const [ordersubmitbtn, setordersubmitbtn] = useState(true);
   const jsonst = {
     product_id: id,
     product_size: size,
@@ -24,53 +32,52 @@ const Order = () => {
     order_quality: quantity, //formData.get("Quality"),
     referral_code: "007", //formData.get("Referral")
   }
+  const checkjsonst = () => {
+    if (jsonst.customer_address.length > 15 && jsonst.customer_name.length > 5 && jsonst.customer_email.includes('@') && jsonst.customer_email.includes('.') && jsonst.customer_email.length > 10 && (jsonst.customer_number.length === 10 || jsonst.customer_number.length === 13))
+      return false;
+    return true;
+  };
   const submitform = (event) => {
     event.preventDefault();
-    jsonst.customer_number = jsonst.customer_number.includes(+91) ? jsonst.customer_number : `+91${jsonst.customer_number}`;
-    console.log(jsonst);
-    fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
-      method: 'POST',
-      body: JSON.stringify({
-        // Add parameters here
-        data: jsonst
-      }),
-      headers: {
-        'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        var data = response.json();
-        if (response.status !== 200) {
-          alert("There has been a issue data. please try after some times");
-          throw "order failed";
-        }
-        return data;
+    event.target.disabled=true;
+    setordersubmitbtn(false);
+    console.log("off");
+    if (checkjsonst()) {
+      alert("given data is not enough");
+      setordersubmitbtn(true);
+    }
+    else {
+      jsonst.customer_number = jsonst.customer_number.includes(+91) ? jsonst.customer_number : `+91${jsonst.customer_number}`;
+      console.log(jsonst);
+      fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
+        method: 'POST',
+        body: JSON.stringify({
+          // Add parameters here
+          data: jsonst
+        }),
+        headers: {
+          'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
+          'Content-Type': 'application/json',
+        },
       })
-      .then((data) => {
-        console.log(data);
-        alert(`Order placed successfully with order id: ${data.order_id} `)
-        // Handle data
-      })
-      .catch((err) => {
-        console.log(err.message, err);
-      });
-    //   $.ajax({
-    //     url: 'https://demo-flask-app-nandhadeva.vercel.app/orderplace',
-    //     type: 'post',
-    //     data: JSON.stringify({
-    //       data: jsonst}),
-    //     headers: {
-    //       'Authorization': 'Bearer tuWYQQdD6Rge3uT2JfCVEE5zg5ZIZPVTC5i7Bq1HL7TyLIQ1SoS1AiVMu8900',
-    //       'Content-Type': 'application/json' , //for object property name, use quoted notation shown in second
-    //       "Access-Control-Allow-Origin": "*",
-    // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-    //     },
-    //     success: function (data) {
-    //         console.info(data);
-    //     }
-    // });
-    event.preventDefault();
+        .then((response) => {
+          var data = response.json();
+          if (response.status !== 200) {
+            alert("There has been a issue data. please try after some times");
+            throw "order failed";
+          }
+          return data;
+        })
+        .then((data) => {
+          console.log(data);
+          alert(`Order placed successfully with order id: ${data.order_id} `);
+          window.location.href = "/products";
+          // Handle data
+        })
+        .catch((err) => {
+          console.log(err.message, err);
+        });
+    }
   }
   const jsonchange = (event) => {
     jsonst[event.target.name] = event.target.value;
@@ -102,10 +109,35 @@ const Order = () => {
 
           <div style={{ padding: 10 }}></div>
 
-          <button type="submit" className="btn btn-dark">Place order</button>
+          <button type="submit" className={`btn btn-dark ${ordersubmitbtn ? "" : "disabled"}`}>Place order</button>
         </form>
       </div>);
   }
+  const Formpage = () => {
+    return (<>
+      <div className='container-sm align-item-center mx-auto' style={{ textAlign: 'center', borderRadius: '25%', marginTop: 30 }}>
+        <div style={{ fontSize: 20 }}>
+          <p><b>Order Details:</b><br /><br />
+            {name}
+          </p>
+        </div>
+        <p>
+          Size : {size} and Id : {id} <br /> quantity: {quantity} <br /> Total Price: {parseInt(quantity) * parseInt(price)}</p>
+      </div >
+      <FormRender />
+    </>
+    );
+  }
+
+  //   const Loadingpage=()=>{
+  //     return(<>
+  //     <div style={{height:'max',width:'max',justifyContent:'center'}}>
+  //     <div class="spinner-border" role="status">
+  //   <span class="sr-only">Loading...</span>
+  // </div>
+  //     </div>
+  //     </>)
+  //   }
 
 
 
@@ -113,18 +145,13 @@ const Order = () => {
   return (
     <>
       <HeadNavbar />
-      <div className='container-sm align-item-center mx-auto' style={{ textAlign: 'center', borderRadius: '25%', marginTop: 30 }}>
-        <div style={{ fontSize: 20 }}>
-          <p><b>Order Details:</b><br /><br />
-          {name}
-          </p>
-          </div>
-          <p>
-        Size : {size} and Id : {id} <br/> quantity: {quantity}</p>
-    </div >
-      <FormRender />
-  {/* <ExpenseForm/>
-    <Search/> */}
+      {/* {
+        ordersubmitbtn?
+          <Formpage/>
+          : <Loadingpage/>
+      } */}
+      <Formpage />
+
     </>
   );
 }
