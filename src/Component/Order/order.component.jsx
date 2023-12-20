@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import HeadNavbar from "../Header.Component";
-import { wait } from '@testing-library/user-event/dist/utils';
 
 const Order = () => {
   const { id } = useParams();
