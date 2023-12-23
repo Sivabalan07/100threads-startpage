@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useRef} from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import HeadNavbar from "../Header.Component";
 
@@ -9,6 +9,7 @@ const Order = () => {
   const size = searchquery.get("size");
   const price = searchquery.get("price");
   const name = searchquery.get("name");
+  const placebtn=useRef();
   useEffect(() => {
     if (id !== "100T0001" || !quantity || quantity.length === 0 || !size || size.length === 0 || !price || price.length === 0 || !name || name.length === 0) {
       alert("select order details is not found");
@@ -37,15 +38,16 @@ const Order = () => {
   };
   const submitform = (event) => {
     event.preventDefault();
-    event.target.disabled=true;
+    placebtn.current.disabled=true;
     console.log("off");
     if (checkjsonst()) {
       alert("given data is not enough");
+      placebtn.current.disabled=false;
     }
     else {
       jsonst.customer_number = jsonst.customer_number.includes(+91) ? jsonst.customer_number : `+91${jsonst.customer_number}`;
       console.log(jsonst);
-      fetch('https://demo-flask-app-nandhadeva.vercel.app/orderplace', {
+      fetch('https://100thread-backend-100threads1s-projects.vercel.app/orderplace', {
         method: 'POST',
         body: JSON.stringify({
           // Add parameters here
@@ -105,7 +107,7 @@ const Order = () => {
 
           <div style={{ padding: 10 }}></div>
 
-          <button type="submit" className="btn btn-dark">Place order</button>
+          <button type="submit" ref={placebtn} className="btn btn-dark">Place order</button>
         </form>
       </div>);
   }
