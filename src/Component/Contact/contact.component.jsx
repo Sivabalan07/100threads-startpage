@@ -16,7 +16,7 @@ const Contact = () => {
                     <br /><br />
                     Physical address:
 100threads Apparel, 
-Turupur-2, 
+Tirupur-2, 
 Tamilnadu,India.
                     <br /><br />
                 </p>
