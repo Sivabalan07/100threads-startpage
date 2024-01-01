@@ -14,7 +14,10 @@ const Contact = () => {
                     <br /><br />
                     Email: <a href='mailto:support@100threads.com' style={{ color: "black", textDecoration: "none" }}>support@100threads.com</a>
                     <br /><br />
-                    Physical address:  manathottam Near AVP school, Thirumurgan poondi ring road, Tirupur-641652 TN, India.
+                    Physical address:
+100threads Apparel, 
+Tirupur-2, 
+Tamilnadu,India.
                     <br /><br />
                 </p>
             </div>
