@@ -1,0 +1,58 @@
+[
+    {
+        "id":"100T0001",
+        "title":"Turtleneck with full sleeve",
+        "price": 1679,
+        "sellprice":479,
+        "description":"A turtleneck design is a timeless style that stretches high up the neck and ends just below your chin.",
+        "stock":[
+            {
+                "size": "XS",
+                "quantity":5
+            },
+            {
+                "size": "S",
+                "quantity":5
+            },
+            {
+                "size": "M",
+                "quantity":5
+            },
+            {
+                "size": "L",
+                "quantity":5
+            },
+            {
+                "size": "XL",
+                "quantity":5
+            }
+        ],
+        "images":[
+            {
+                "order":0,
+                "url":"",
+                "bgremoved":false
+            },
+            {
+                "order":0,
+                "url":"",
+                "bgremoved":false
+            },
+            {
+                "order":0,
+                "url":"",
+                "bgremoved":false
+            },
+            {
+                "order":0,
+                "url":"",
+                "bgremoved":false
+            },
+            {
+                "order":0,
+                "url":"",
+                "bgremoved":false
+            }
+        ]        
+    }
+]
