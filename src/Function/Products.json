@@ -1,58 +1,130 @@
-[
-    {
-        "id":"100T0001",
-        "title":"Turtleneck with full sleeve",
-        "price": 1679,
-        "sellprice":479,
-        "description":"A turtleneck design is a timeless style that stretches high up the neck and ends just below your chin.",
-        "stock":[
-            {
+[{
+        "id": "100T0002",
+        "title": "trunk",
+        "category": "men",
+        "subcategory": "innerwear",
+        "price": 999,
+        "sellprice": 450,
+        "description": "A turtleneck design is a timeless style that stretches high up the neck and ends just below your chin.",
+        "Addditiondes": [{
+            "heading": "",
+            "detail": ""
+        }],
+        "stock": [{
                 "size": "XS",
-                "quantity":5
+                "quantity": 5
             },
             {
                 "size": "S",
-                "quantity":5
+                "quantity": 5
             },
             {
                 "size": "M",
-                "quantity":5
+                "quantity": 5
             },
             {
                 "size": "L",
-                "quantity":5
+                "quantity": 5
             },
             {
                 "size": "XL",
-                "quantity":5
+                "quantity": 5
             }
         ],
-        "images":[
-            {
-                "order":0,
-                "url":"",
-                "bgremoved":false
+        "images": [{
+                "order": 0,
+                "url": "",
+                "bgremoved": false
             },
             {
-                "order":0,
-                "url":"",
-                "bgremoved":false
+                "order": 0,
+                "url": "",
+                "bgremoved": false
             },
             {
-                "order":0,
-                "url":"",
-                "bgremoved":false
+                "order": 0,
+                "url": "",
+                "bgremoved": false
             },
             {
-                "order":0,
-                "url":"",
-                "bgremoved":false
+                "order": 0,
+                "url": "",
+                "bgremoved": false
             },
             {
-                "order":0,
-                "url":"",
-                "bgremoved":false
+                "order": 0,
+                "url": "",
+                "bgremoved": false
             }
-        ]        
+        ]
+    },
+    {
+        "id": "100T0001",
+        "title": "Turtleneck with full sleeve",
+        "price": 999,
+        "category": "women",
+        "subcategory": "T-shirt",
+        "sellprice": 479,
+        "description": "A turtleneck design is a timeless style that stretches high up the neck and ends just below your chin.",
+        "Addditiondes": [{
+                "heading": "Product details",
+                "detail": "Material composition-cotton elastane blend<br/>Pattern-solid<br/>Fit-slim fit<br/>Sleeve type-long sleeve<br/>Neck style-Highneck"
+            },
+            {
+                "heading": "About this item",
+                "detail": "Fit type-Regular fit<br/>Wash care-machine & Hand wash<br/>Pattern name-solid, sleeve tyle-full sleeve<br/>Look trendy and feel comfortable with highneck"
+            },
+            {
+                "heading": "Additional information",
+                "detail": "County of origin-India<br/>Manufacturer-100threads<br/>Item weight-250 gms<br/>Item dimension LxW-12x10 inch<br/>Net qty-1.00 count<br/>Generic name -T-shirt"
+            }
+        ],
+        "stock": [{
+                "size": "XS",
+                "quantity": 5
+            },
+            {
+                "size": "S",
+                "quantity": 5
+            },
+            {
+                "size": "M",
+                "quantity": 5
+            },
+            {
+                "size": "L",
+                "quantity": 5
+            },
+            {
+                "size": "XL",
+                "quantity": 5
+            }
+        ],
+        "images": [{
+                "order": 0,
+                "url": "",
+                "bgremoved": false
+            },
+            {
+                "order": 0,
+                "url": "",
+                "bgremoved": false
+            },
+            {
+                "order": 0,
+                "url": "",
+                "bgremoved": false
+            },
+            {
+                "order": 0,
+                "url": "",
+                "bgremoved": false
+            },
+            {
+                "order": 0,
+                "url": "",
+                "bgremoved": false
+            }
+        ]
     }
 ]
