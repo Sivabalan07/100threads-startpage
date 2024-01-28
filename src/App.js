@@ -11,6 +11,7 @@ import ProductId from "./Component/Product/productId.component";
 import Privacy from "./Component/Policy/privacy.component";
 import Terms from "./Component/Policy/terms.component";
 import Order from "./Component/Order/order.component";
+import Error from "./Component/Error/error.component";
 
 function App() {
   return (
@@ -27,24 +28,9 @@ function App() {
           <Route path="Order/:id" element={<Order/>} />
           <Route
             path="*"
-            element={
-              <>
+            element={<>
               <HeadNavbar Setactbar='0' />
-              <div className="container mt-5 App">
-                <div className="animation-cs">
-                  <p>Your are looking page is not found <br></br> Please visit our home and enjoy shopping..</p>
-                </div>
-                <a href="./">
-                <div className="fade-in show">
-                  <div className="bg-img" role="banner"></div>
-                </div>
-
-                <p style={{ fontFamily: "Snell Roundhand, cursive" }}>
-                  The best clothing to buy and have a full comfort of our brand
-                  products
-                </p>
-                </a>
-              </div>
+              <Error/>
               </>
             }
           />
