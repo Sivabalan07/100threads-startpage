@@ -131,7 +131,7 @@ const ProductId = () => {
 
           <p className="product-description">
             {/* Add your product description here */}
-           {x.detail.replace("\n",<br/>)}
+           {x.detail.split("\n").map(x=><>{x}<br/></>)}
           </p>
         </div>)
           })
