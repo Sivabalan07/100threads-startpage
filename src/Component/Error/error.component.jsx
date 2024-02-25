@@ -8,7 +8,7 @@ const Error=()=>{
                 <div className="animation-cs">
                   <p>Your are looking page is not found <br></br> Please visit our home and enjoy shopping..</p>
                 </div>
-                <a href="./">
+                <a href="/">
                 <div className="fade-in show">
                   <div className="bg-img" role="banner"></div>
                 </div>

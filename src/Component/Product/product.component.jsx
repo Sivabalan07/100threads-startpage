@@ -1,12 +1,14 @@
 import React from 'react';
 import HeadNavbar from "../Header.Component";
 import "./products.component.css";
+import {products} from "../../Function/Productdata";
 const Product = () => {
 
   // const handleOrderNow = (event) => {
   //   var id=event.target.value;
   //   window.location.href = `product/${id}`;
   // };
+  const productList=products();
   return (
     <>
       <HeadNavbar Setactbar='1' />

@@ -24,6 +24,7 @@ const ProductId = () => {
   //const [productvalue,setprodct]=useState({});
   const quantityref=useRef();
   const productvalue=product(id);
+  // console.log(productvalue);
   //#endregion
  
   //#region functions

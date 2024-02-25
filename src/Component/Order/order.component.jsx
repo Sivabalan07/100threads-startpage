@@ -1,6 +1,8 @@
-import React, { useEffect , useRef} from 'react';
+import React, { useEffect , useRef,useState} from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import HeadNavbar from "../Header.Component";
+import {stockids} from "../../Function/Productdata";
+import Error from '../Error/error.component';
 
 const Order = () => {
   const { id } = useParams();
@@ -10,12 +12,14 @@ const Order = () => {
   const price = searchquery.get("price");
   const name = searchquery.get("name");
   const placebtn=useRef();
+  const stocks=stockids();
+  const [er,setError]=useState(false)
+  console.log(stocks);
   useEffect(() => {
-    if (id !== "100T0001" || !quantity || quantity.length === 0 || !size || size.length === 0 || !price || price.length === 0 || !name || name.length === 0) {
-      alert("select order details is not found");
-      window.location.href = "/products";
+    if (!stocks.includes(id)  || !quantity || quantity.length === 0 || !size || size.length === 0 || !price || price.length === 0 || !name || name.length === 0) {
+     setError(true);
     }
-  }, [])
+  },[])
   const jsonst = {
     product_id: id,
     product_size: size,
@@ -59,6 +63,7 @@ const Order = () => {
         },
       })
         .then((response) => {
+          console.log(response)
           var data = response.json();
           if (response.status !== 200) {
             alert("There has been a issue data. please try after some times");
@@ -148,7 +153,7 @@ const Order = () => {
           <Formpage/>
           : <Loadingpage/>
       } */}
-      <Formpage />
+      {er?<Error/>:<Formpage />}
 
     </>
   );
