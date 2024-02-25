@@ -3,8 +3,24 @@ import productdata from "./Products.json"
 import stocks from "./Stock.json"
 
 const request=()=>{
-    // fetch("https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Products.json?alt=media&token=8ef98f68-eed0-4a10-bb38-01fab2a12b87",{method:"get"})
-    // .then((response)=>console.log(response.json())).catch((err)=> console.log(err))
+    fetch("https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Products.json?alt=media&token=8ef98f68-eed0-4a10-bb38-01fab2a12b87",{method:"get",mode:'no-cors'})
+    .then((response)=>console.log(response.json())).catch((err)=> console.log(err))
+    // $.ajax({
+    //     url: 'https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Products.json?alt=media&token=8ef98f68-eed0-4a10-bb38-01fab2a12b87',
+    //     method: 'GET',
+    //     crossdomain:true,
+    //     mode:'no-cors',
+    //     success: function(response) {
+    //         console.log(response)
+    //         const parsedData = JSON.parse(response);
+    //         // Process the parsed data here
+    //     },
+    //     error: function(xhr, status, error) {
+    //         // Handle any errors
+    //     }
+    // });
+
+
     
 
 }
