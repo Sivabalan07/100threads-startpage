@@ -1,31 +1,35 @@
-import productdata from "./Products.json"
-// import categorydata from "./CategoryId.json"
-import stocks from "./Stock.json"
+import { wait } from "@testing-library/user-event/dist/utils";
 
-const request=()=>{
-    fetch("https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Products.json?alt=media&token=8ef98f68-eed0-4a10-bb38-01fab2a12b87",{method:"get"})
-    .then((response)=>console.log(response.json())).catch((err)=> console.log(err))
-    // $.ajax({
-    //     url: 'https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Products.json?alt=media&token=8ef98f68-eed0-4a10-bb38-01fab2a12b87',
-    //     method: 'GET',
-    //     crossdomain:true,
-    //     mode:'no-cors',
-    //     success: function(response) {
-    //         console.log(response)
-    //         const parsedData = JSON.parse(response);
-    //         // Process the parsed data here
-    //     },
-    //     error: function(xhr, status, error) {
-    //         // Handle any errors
-    //     }
-    // });
-
-
-    
-
+ const Productrequest=async ()=>{
+    let products=localStorage["product"];
+    let date=localStorage["productexpire"];
+    if(products && Date.now() < date){
+        return JSON.parse(products);}
+    return await fetch("https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Products.json?alt=media&token=b6fbb5cc-f397-4622-9975-13f2ff945822",{method:"get"})
+    .then((response)=>response.json())
+    .then((data)=> {
+        localStorage["product"]=JSON.stringify(data);
+        localStorage["productexpire"]=Date.now()+86400000
+        return data;
+    })
+    .catch((err)=> console.log(err))   
 }
-request()
-let data = productdata;
+const stockRequest=async ()=>{
+    let localstocks=localStorage["stock"];
+    let date=localStorage["Stockexpire"];
+    if(localstocks && Date.now() < date){
+        return JSON.parse(localstocks);}
+    return await fetch("https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Stock.json?alt=media&token=15c89f58-035f-4c3a-8ef6-8fc67ea66c52",{method:"get"})
+    .then((response)=>response.json())
+    .then((data)=> {
+        localStorage["stock"]=JSON.stringify(data);
+        localStorage["Stockexpire"]=Date.now()+10800000
+        return data;
+    })
+    .catch((err)=> console.log(err))
+}
+let data = await Productrequest();
+let stocks=stockRequest();
 const products=()=>{
     for(let i =0;i<data.length;i++)
     data[i].image=data[i].images.filter(x=>x.order>=0).sort(x=>x.order).map(x=>x.url);
@@ -40,18 +44,6 @@ const product=(id)=>{
     var {images,...p}=data[index];
     return p;
 }
-// const category=(name)=>{
-//     var menId= categorydata.men.filter(x=>categorydata[name].includes(x));
-//     var womenId=categorydata.women.filter(x=>categorydata[name].includes(x));
-//     console.log(menId,womenId);
-//     var list={
-//         men:[],
-//         women:[]
-//     }
-//     menId.forEach(a=>list.men.push(data.filter(x=>x.id.localeCompare(a))));
-//     womenId.forEach(a=>list.women.push(data.filter(x=>x.id.localeCompare(a))));
-//     return list
-// }
 const stock=(id)=>{
     return stocks[id];
 }
