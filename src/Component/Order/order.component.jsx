@@ -14,7 +14,6 @@ const Order = () => {
   const placebtn=useRef();
   const stocks=stockids();
   const [er,setError]=useState(false)
-  console.log(stocks);
   useEffect(() => {
     if (!stocks.includes(id)  || !quantity || quantity.length === 0 || !size || size.length === 0 || !price || price.length === 0 || !name || name.length === 0) {
      setError(true);
