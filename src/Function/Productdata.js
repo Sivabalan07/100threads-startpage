@@ -1,6 +1,4 @@
-import { wait } from "@testing-library/user-event/dist/utils";
-
- const Productrequest=async ()=>{
+const Productrequest=async ()=>{
     let products=localStorage["product"];
     let date=localStorage["productexpire"];
     if(products && Date.now() < date){
