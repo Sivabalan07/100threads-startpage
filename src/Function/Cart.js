@@ -39,3 +39,5 @@ const RemoveFromCart = (stock) => {
         }
     }
 }
+
+export {RemoveFromCart,SetToCart,AddToCart};
