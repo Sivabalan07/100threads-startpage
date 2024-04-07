@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import {initializeApp} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import {getStorage,getDownloadURL,ref} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js"
+import {initializeApp} from "firebase/app";
+import {getStorage,getDownloadURL,ref} from "firebase/storage"
 
 const firebaseConfig = {
   apiKey: "AIzaSyC6rAlYl5mgtLP5RUY_OKP8nt_eSfb9ZuY",
