@@ -1,9 +1,26 @@
+// Import the functions you need from the SDKs you need
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+import {getStorage,getDownloadURL,ref} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js"
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC6rAlYl5mgtLP5RUY_OKP8nt_eSfb9ZuY",
+  authDomain: "threads-23c16.firebaseapp.com",
+  projectId: "threads-23c16",
+  storageBucket: "threads-23c16.appspot.com",
+  messagingSenderId: "470233942109",
+  appId: "1:470233942109:web:017717d1398cefcf7265b4",
+  measurementId: "G-1WG5SP2NDM",
+};
+
+// Initialize Firebase
+const app=initializeApp(firebaseConfig);
+const stge=getStorage(app,'gs://threads-23c16.appspot.com')
 const Productrequest=async ()=>{
     let products=localStorage["product"];
     let date=localStorage["productexpire"];
     if(products && Date.now() < date){
         return JSON.parse(products);}
-    return await fetch("https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Products.json?alt=media&token=38a35a7d-2188-4a28-a4c4-6b697f46a886",{method:"get"})
+    return await getDownloadURL(ref(stge,"Products.json")).then(async (url)=>{return await fetch(url,{method:"get"})
     .then((response)=>{
         if(response.status!==200)
             throw response.status
@@ -12,7 +29,7 @@ const Productrequest=async ()=>{
         localStorage["product"]=JSON.stringify(data);
         localStorage["productexpire"]=Date.now()+86400000
         return data;
-    })
+    })})
     .catch((err)=> console.log(err))   
 }
 const stockRequest=async ()=>{
@@ -20,7 +37,7 @@ const stockRequest=async ()=>{
     let date=localStorage["Stockexpire"];
     if(localstocks && Date.now() < date){
         return JSON.parse(localstocks);}
-    return await fetch("https://firebasestorage.googleapis.com/v0/b/threads-23c16.appspot.com/o/Stock.json?alt=media&token=ed60ec27-6f94-45f6-8527-2d6ee2dabe5d",{method:"get"})
+    return await getDownloadURL(ref(stge,"Stock.json")).then(async (url)=>{return await fetch(url,{method:"get"})
     .then((response)=>{
         if(response.status!==200)
             throw response.status
@@ -29,7 +46,7 @@ const stockRequest=async ()=>{
         localStorage["stock"]=JSON.stringify(data);
         localStorage["Stockexpire"]=Date.now()+10800000
         return data;
-    })
+    })})
     .catch((err)=> console.log(err))
 }
 let data = await Productrequest();
