@@ -8,7 +8,7 @@ const HeadNavbar = ({Setactbar}) => {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{backgroundColor: 'white', padding:0}}>
-        <div className="container" style={{ padding:0, width:'max',fontFamily: "Snell Roundhand, cursive" }}>
+        <div className="container" style={{ padding:0, width:'max',fontWeight:550 }}>
           <a className="navbar-brand" href="/">
             <div className='logobg-img'></div>
           </a>

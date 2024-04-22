@@ -11,12 +11,12 @@ const ProductId = () => {
 
   //#region  variables 
   const { id } = useParams();
-  const [Size, SetSize] = useState("XS");
   const [quantity, setQuantity] = useState(1);
   const [image, setImage] = useState(0);
   const stocks=stock(id);
   const quantityref=useRef();
   const productvalue=product(id);
+  const [Size, SetSize] = useState(Object.keys(stocks).filter(x=>stocks[x]>0)[0]);
   // console.log(productvalue); 
   //#endregion
  
@@ -43,6 +43,7 @@ const ProductId = () => {
   //#region  effect function
   useEffect(()=>{
     //console.log(productvalue);
+
     if(productvalue!=undefined)
     {var sizequantity=stocks[Size];
       
@@ -100,9 +101,12 @@ const ProductId = () => {
 
           <div className="size-section">
             <label htmlFor="size">Size:</label>
-            <select id="size" className="size-dropdown" defaultValue={productvalue.size[0]} onChange={Sizechange} style={{ border: 1, borderRadius: 5, backgroundColor: 'transparent' }}>
+            {/* <select id="size" className="size-dropdown" defaultValue={productvalue.size[0]} onChange={Sizechange} style={{ border: 1, borderRadius: 5, backgroundColor: 'transparent' }}>
             {productvalue.size.map(i=>{return(<option value={i}>{i}</option>)})}
-            </select>
+            </select> */}
+            <div style={{display:'flex',justifyContent:'space-evenly'}}>
+            { productvalue.size.map(i=>{return(<button disabled={stocks[i]<1} type="button" className={`btn btn-outline-dark ${Size==i?"selected":""}`} onClick= { Sizechange} value={i}>{i}</button>)})}
+            </div>
           </div>
 
           <div className="quantity-section">

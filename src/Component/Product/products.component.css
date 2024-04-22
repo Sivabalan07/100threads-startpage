@@ -195,3 +195,9 @@ input::-webkit-inner-spin-button {
   object-fit: contain;
 
 }
+
+.selected{
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
