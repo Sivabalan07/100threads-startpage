@@ -114,7 +114,7 @@ const product = (id) => {
     return p;
 }
 const stock = (id) => {
-    let filteredIds=stockids().filter(x=>x.includes(id));
+    let filteredIds=Object.keys(stocks).filter(x=>x.includes(id));
     let stocklocalitems={};
     if(filteredIds.length>0)
     {
@@ -131,7 +131,7 @@ const stock = (id) => {
     return stocklocalitems;
 }
 const stockids = () => {
-    var ids = Object.keys(stocks);
+    var ids = data.map(x=>x.id);
     return ids
 }
 export { product, products, stock, stockids,updateStock }
