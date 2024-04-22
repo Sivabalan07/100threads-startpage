@@ -58,7 +58,7 @@ const updateStock = async (stockId, stockSize, quantity) => {
         // console.log("gets the data");
     let filteredItem = Object.keys(item).filter(i => i.includes(stockId));
     // console.log("filters the key");
-    if (filteredItem.every(x => item[x][stockSize] > quantity)) {
+    if (filteredItem.every(x => item[x][stockSize] >= quantity)) {
         filteredItem.every(i => {
             item[i][stockSize] -= quantity;
             return true;
