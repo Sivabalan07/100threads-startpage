@@ -55,16 +55,15 @@ const updateStock = async (stockId, stockSize, quantity) => {
             })
     })
         .catch((err) => console.log(err));
-        console.log("gets the data");
+        // console.log("gets the data");
     let filteredItem = Object.keys(item).filter(i => i.includes(stockId));
-    console.log("filters the key");
+    // console.log("filters the key");
     if (filteredItem.every(x => item[x][stockSize] > quantity)) {
         filteredItem.every(i => {
             item[i][stockSize] -= quantity;
-            console.log(item);
             return true;
         });
-        console.log("assign the quantity",item);
+        // console.log("assign the quantity",item);
         return uploadString(ref(stge, fileinfo.stock), JSON.stringify(item)).then((i) => {
             console.log('Uploaded ');
             localStorage["stock"] = JSON.stringify(item);
