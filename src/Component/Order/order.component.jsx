@@ -93,6 +93,7 @@ const Order = () => {
           window.location.href = "/products";
         } else {
           alert("Required quantity is not available.");
+          window.location.href = "/products";
         }
       });
     }
