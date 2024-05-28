@@ -68,10 +68,18 @@ const Centerpot = () => {
                         </div>
                     </div>
                 </div>
-                <ul style={{overflowX:'hidden',display:'inline'}}>
+                
+            </div>
+        </>
+    );
+}
+
+const SliceCard=()=>{
+    return(
+        <ul style={{overflowX:'hidden',display:'flex'}}>
                     {productList?.map(product => {
                         return (
-                            <li style={{listStyle:'none', display:'inline',float:'left'}}>
+                            <li style={{listStyle:'none', display:'inline-block',float:'left'}}>
                                 <div className="card" >
                                     <img className="card-img-top" src={product.frontImage} alt="Card image"/>
                                         <div className="card-body">
@@ -85,9 +93,7 @@ const Centerpot = () => {
                         )
                     })}
                 </ul>
-            </div>
-        </>
-    );
+    )
 }
 
 const Home = () => {
@@ -98,6 +104,7 @@ const Home = () => {
                 <marquee ><p style={{ justifyContent: 'inherit', marginBottom: 0, marginTop: 15 }}>New Sales arrived with five T-shirt @&#8377;999 !!, Grab it now.</p></marquee>
             </div>
             <Centerpot />
+            <SliceCard/>
             <Serviceshort />
         </>
     );
